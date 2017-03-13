@@ -14,19 +14,19 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
     var timer: Timer!
     
     private var myItems: NSArray = []
-    private var myTableView: UITableView!
+    @IBOutlet weak var myTableView: UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Status Barの高さを取得する.
-        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
-        
-        // Viewの高さと幅を取得する.
-        let displayWidth: CGFloat = self.view.frame.width
-        let displayHeight: CGFloat = self.view.frame.height
-        // TableViewの生成(Status barの高さをずらして表示).
-        myTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight))
+//        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
+//        
+//        // Viewの高さと幅を取得する.
+//        let displayWidth: CGFloat = self.view.frame.width
+//        let displayHeight: CGFloat = self.view.frame.height
+//        // TableViewの生成(Status barの高さをずらして表示).
         
         // Cell名の登録をおこなう.
         myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
