@@ -16,6 +16,9 @@
 		DED073411E6C246D00092366 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED0733F1E6C246D00092366 /* LaunchScreen.storyboard */; };
 		ED3D20941E6E5F9700643353 /* GetProfileDeligate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D20931E6E5F9700643353 /* GetProfileDeligate.swift */; };
 		ED3D20961E6E629100643353 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D20951E6E629100643353 /* Profile.swift */; };
+		EDAC0FF21E77BA8D00ADADDA /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = EDAC0FF01E77BA8D00ADADDA /* camera.png */; };
+		EDAC0FF31E77BA8D00ADADDA /* library.png in Resources */ = {isa = PBXBuildFile; fileRef = EDAC0FF11E77BA8D00ADADDA /* library.png */; };
+		EDAC0FF71E77BB7D00ADADDA /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAC0FF61E77BB7D00ADADDA /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		DED073421E6C246D00092366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED3D20931E6E5F9700643353 /* GetProfileDeligate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProfileDeligate.swift; sourceTree = "<group>"; };
 		ED3D20951E6E629100643353 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		EDAC0FF01E77BA8D00ADADDA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		EDAC0FF11E77BA8D00ADADDA /* library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = library.png; sourceTree = "<group>"; };
+		EDAC0FF61E77BB7D00ADADDA /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = ../CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +73,11 @@
 				DED073381E6C246D00092366 /* SecondViewController.swift */,
 				DB972FB41E705E8200883A5F /* ProfileViewController.swift */,
 				ED3D20931E6E5F9700643353 /* GetProfileDeligate.swift */,
-				DED0733A1E6C246D00092366 /* Main.storyboard */,
 				ED3D20951E6E629100643353 /* Profile.swift */,
+				EDAC0FF61E77BB7D00ADADDA /* CameraViewController.swift */,
+				DED0733A1E6C246D00092366 /* Main.storyboard */,
+				EDAC0FF01E77BA8D00ADADDA /* camera.png */,
+				EDAC0FF11E77BA8D00ADADDA /* library.png */,
 				DED0733D1E6C246D00092366 /* Assets.xcassets */,
 				DED0733F1E6C246D00092366 /* LaunchScreen.storyboard */,
 				DED073421E6C246D00092366 /* Info.plist */,
@@ -136,8 +145,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDAC0FF31E77BA8D00ADADDA /* library.png in Resources */,
 				DED073411E6C246D00092366 /* LaunchScreen.storyboard in Resources */,
 				DED0733E1E6C246D00092366 /* Assets.xcassets in Resources */,
+				EDAC0FF21E77BA8D00ADADDA /* camera.png in Resources */,
 				DED0733C1E6C246D00092366 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +164,7 @@
 				ED3D20961E6E629100643353 /* Profile.swift in Sources */,
 				DED073351E6C246D00092366 /* AppDelegate.swift in Sources */,
 				ED3D20941E6E5F9700643353 /* GetProfileDeligate.swift in Sources */,
+				EDAC0FF71E77BB7D00ADADDA /* CameraViewController.swift in Sources */,
 				DB972FB51E705E8200883A5F /* ProfileViewController.swift in Sources */,
 				DED073371E6C246D00092366 /* FirstViewController.swift in Sources */,
 			);
