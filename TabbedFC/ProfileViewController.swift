@@ -15,7 +15,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     var profile = Profile.sharedProfile
     var gender: Int = 0 // 0は男、1は女
+<<<<<<< HEAD
     var oya: Int = 0 // 0は子供、1は親　make room押したら1になる
+=======
+    var oya: Int = 0 // 0は子供、1は親　makeroom押したら1になる
+>>>>>>> 16fb0e7cc7f8ccba5159b0c768683ec3613a8d5e
     var profArray: Array<Any> = []
     
     override func viewDidLoad() {
@@ -49,6 +53,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     
+<<<<<<< HEAD
     @IBAction func camera(_ sender: Any) {
         let sourceType: UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.camera
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
@@ -76,6 +81,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         picker.dismiss(animated: true, completion: nil)
     }
     
+=======
+>>>>>>> 16fb0e7cc7f8ccba5159b0c768683ec3613a8d5e
     @IBAction func genderSelection(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex{
         case 0:
