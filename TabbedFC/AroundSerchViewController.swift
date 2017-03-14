@@ -12,6 +12,7 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
 
     var ble = BLE.sharedBle
     var timer: Timer!
+    var num: Int?
     
     private var myItems: NSArray = []
     @IBOutlet weak var myTableView: UITableView!
@@ -19,14 +20,6 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Status Barの高さを取得する.
-//        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
-//        
-//        // Viewの高さと幅を取得する.
-//        let displayWidth: CGFloat = self.view.frame.width
-//        let displayHeight: CGFloat = self.view.frame.height
-//        // TableViewの生成(Status barの高さをずらして表示).
         
         // Cell名の登録をおこなう.
         myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
@@ -36,6 +29,9 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
         
         // Delegateを自身に設定する.
         myTableView.delegate = self
+        
+        // Cellの複数選択を回避
+        myTableView.allowsMultipleSelection = false
         
         // Viewに追加する.
         self.view.addSubview(myTableView)
@@ -49,7 +45,7 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
         getPeripheral()
         //テーブルビュー更新
         myTableView.reloadData()
-        print("更新")
+        //print("更新")
     }
     
     func getPeripheral() {
@@ -65,8 +61,18 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Num: \(indexPath.row)")
         print("Value: \(myItems[indexPath.row])")
-        ble.setNewPeripheral(indexPath.row)
-        self.navigationController?.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "waiting") as! WaitingAroundViewController, animated: true)
+        let cell = tableView.cellForRow(at:indexPath)
+        num = indexPath.row
+        // チェックマークを入れる
+        cell?.accessoryType = .checkmark
+    }
+    
+    // セルの選択が外れた時に呼び出される
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at:indexPath)
+        // チェックマークを外す
+        print("aaa")
+        cell?.accessoryType = .none
     }
     
     //Cellの総数を返す
@@ -78,7 +84,8 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 再利用するCellを取得する.
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
-        
+        // セルが選択された時の背景色を消す
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         // Cellに値を設定する.
         cell.textLabel!.text = "\(myItems[indexPath.row])"
         
@@ -89,6 +96,14 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         timer.invalidate()
+    }
+    
+    // Joinが押された際の処理
+    @IBAction func joinButton(_ sender: Any) {
+        if num != nil {
+            ble.setNewPeripheral(num!)
+            self.navigationController?.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "waiting") as! WaitingAroundViewController, animated: true)
+        }
     }
     
 }
