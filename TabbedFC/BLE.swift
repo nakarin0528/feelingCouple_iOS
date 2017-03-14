@@ -23,8 +23,8 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     static var isError = false
 
     
-    let pointerCharacteristicUUID = "A001"
-    let tempCharacteristicUUID = "A002"
+    let roomUUID = "A001"
+    let personalUUID = "A002"
     
     
     static let sharedBle = BLE()
@@ -165,11 +165,11 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
         print("\(characteristics.count) 個のキャラクタリスティックを発見！ \(characteristics)")
         
         for characteristic in characteristics {
-            if characteristic.uuid.isEqual(CBUUID(string: pointerCharacteristicUUID)){
+            if characteristic.uuid.isEqual(CBUUID(string: roomUUID)){
                 pointerCharacteristic = characteristic
             }
             //Readプロパティを持つのキャラクタリスティックの値を読み出す
-            if characteristic.uuid.isEqual(CBUUID(string: tempCharacteristicUUID)) {
+            if characteristic.uuid.isEqual(CBUUID(string: personalUUID)) {
                 foundCharacteristic = characteristic
             }
             
@@ -189,7 +189,7 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
         
         print("読み出し成功！service uuid: \(characteristic.service.uuid), characteristic uuid: \(characteristic.uuid), value: \(characteristic.value)")
         //欲しいキャラクタリスティックかどうかを判定
-        if characteristic.uuid.isEqual(CBUUID(string: tempCharacteristicUUID)){
+        if characteristic.uuid.isEqual(CBUUID(string: personalUUID)){
 
         }
     }

@@ -253,6 +253,9 @@
                             <constraint firstItem="EOp-fy-a7E" firstAttribute="top" secondItem="PEv-jM-fSv" secondAttribute="bottom" constant="25" id="tCG-6J-gna"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myTableView" destination="EOp-fy-a7E" id="QUP-1n-yr6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EuP-Zn-SQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
