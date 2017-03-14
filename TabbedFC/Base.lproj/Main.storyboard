@@ -147,6 +147,9 @@
                                     <segment title="男性"/>
                                     <segment title="女性"/>
                                 </segments>
+                                <connections>
+                                    <action selector="genderSelection:" destination="hQI-sA-4Jj" eventType="valueChanged" id="a4Z-GM-IMu"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0G-o5-7lE">
                                 <rect key="frame" x="172" y="398" width="31" height="29"/>
@@ -171,7 +174,7 @@
                             <constraint firstItem="TtS-JB-keP" firstAttribute="top" secondItem="TJr-TF-pNS" secondAttribute="bottom" constant="30" id="zEx-jd-kKO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="Profile"  id="Eek-V2-g5A"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="Eek-V2-g5A"/>
                     <connections>
                         <outlet property="nameText" destination="TJr-TF-pNS" id="teK-th-0Km"/>
                     </connections>
