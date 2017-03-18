@@ -14,8 +14,8 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     var isScanning = false
     var centralManager: CBCentralManager!
     var peripheral: CBPeripheral!
-    var foundCharacteristic: CBCharacteristic!
-    var pointerCharacteristic: CBCharacteristic!
+    var personalCharacteristic: CBCharacteristic!
+    var roomCharacteristic: CBCharacteristic!
     var myPeripheral: [CBPeripheral] = []
     var peripheralList: [String] = []
     static var flag = false
@@ -166,11 +166,11 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
         
         for characteristic in characteristics {
             if characteristic.uuid.isEqual(CBUUID(string: roomUUID)){
-                pointerCharacteristic = characteristic
+                roomCharacteristic = characteristic
             }
             //Readプロパティを持つのキャラクタリスティックの値を読み出す
             if characteristic.uuid.isEqual(CBUUID(string: personalUUID)) {
-                foundCharacteristic = characteristic
+                personalCharacteristic = characteristic
             }
             
         }
