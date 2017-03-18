@@ -14,13 +14,12 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     @IBOutlet var advertiseBtn: UIButton!
     var peripheralManager: CBPeripheralManager!
     var peripheral:CBPeripheralManagerDelegate!
-    var characteristic: CBMutableCharacteristic!
+    var readCharacteristic: CBMutableCharacteristic!
+    var writeCharacteristic: CBMutableCharacteristic!
     
-    let serviceUUID = CBUUID(string: "0000")
+    let serviceUUID = CBUUID(string: "A000")
     
     
-    let roomUUID="A001"
-    let personalUUID="A002"
     
     static let sharedBleP = BLEP()
     
@@ -43,20 +42,30 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         let service = CBMutableService(type: serviceUUID, primary: true)
         
         // キャラクタリスティックを作成
-        let characteristicUUID = CBUUID(string: "0001")
+        let readUUID = CBUUID(string: "A001")
+        let writeUUID = CBUUID(string: "A002")
         
-        let properties: CBCharacteristicProperties = [.read, .write]
+        let readProperties: CBCharacteristicProperties = [.read]
+        let writeProperties: CBCharacteristicProperties = [.write]
         
-        let permissions: CBAttributePermissions = [.readable, .writeable]
+        let readPermissions: CBAttributePermissions = [.readable]
+        let writePermissions: CBAttributePermissions = [.writeable]
+
         
-        characteristic = CBMutableCharacteristic(
-            type: characteristicUUID,
-            properties: properties,
+        readCharacteristic = CBMutableCharacteristic(
+            type: readUUID,
+            properties: readProperties,
             value: nil,
-            permissions: permissions)
+            permissions: readPermissions)
+        
+        writeCharacteristic = CBMutableCharacteristic(
+            type: writeUUID,
+            properties: writeProperties,
+            value: nil,
+            permissions: writePermissions)
         
         // キャラクタリスティックをサービスにセット
-        service.characteristics = [characteristic]
+        service.characteristics = [readCharacteristic, writeCharacteristic]
         
         // サービスを Peripheral Manager にセット
         peripheralManager.add(service)
@@ -64,7 +73,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         // 値をセット
         let value = UInt8(arc4random() & 0xFF)
         let data = Data(bytes: UnsafePointer<UInt8>([value]), count: 1)
-        characteristic.value = data;
+        readCharacteristic.value = data;
     }
     
     private func startAdvertise() {
@@ -125,10 +134,10 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         print("Readリクエスト受信！ requested service uuid:\(request.characteristic.service.uuid) characteristic uuid:\(request.characteristic.uuid) value:\(request.characteristic.value)")
         
         // プロパティで保持しているキャラクタリスティックへのReadリクエストかどうかを判定
-        if request.characteristic.uuid.isEqual(characteristic.uuid) {
+        if request.characteristic.uuid.isEqual(readCharacteristic.uuid) {
             
             // CBMutableCharacteristicのvalueをCBATTRequestのvalueにセット
-            request.value = characteristic.value;
+            request.value = readCharacteristic.value;
             
             // リクエストに応答
             peripheralManager.respond(to: request, withResult: CBATTError.Code.success)
@@ -142,27 +151,16 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         for request in requests {
             print("Requested value:\(request.value) service uuid:\(request.characteristic.service.uuid) characteristic uuid:\(request.characteristic.uuid)")
             
-            if request.characteristic.uuid.isEqual(characteristic.uuid)
+            if request.characteristic.uuid.isEqual(writeCharacteristic.uuid)
             {
                 // CBMutableCharacteristicのvalueに、CBATTRequestのvalueをセット
-                characteristic.value = request.value;
+                writeCharacteristic.value = request.value;
             }
         }
         
         // リクエストに応答
         peripheralManager.respond(to: requests[0] , withResult: CBATTError.Code.success)
     }
-    
-    
-    // アドバタイズ開始処理が完了すると呼ばれる
-    func peripheralManagerDidStartAdvertising(peripheral: CBPeripheralManager, error: NSError?) {
-        if let error = error {
-            print("アドバタイズ開始失敗！ error: \(error)")
-            return
-        }
-        print("アドバタイズ開始成功！")
-    }
-    
     
     func advertise() {
         if !peripheralManager.isAdvertising {
