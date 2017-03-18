@@ -13,6 +13,7 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
     var ble = BLE.sharedBle
     var timer: Timer!
     var num: Int?
+    var lastCell: UITableViewCell?
     
     private var myItems: NSArray = []
     @IBOutlet weak var myTableView: UITableView!
@@ -61,6 +62,9 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Num: \(indexPath.row)")
         print("Value: \(myItems[indexPath.row])")
+        // 前に選択されたセルのチェックを外す
+        lastCell?.accessoryType = .none
+        lastCell = tableView.cellForRow(at:indexPath)
         let cell = tableView.cellForRow(at:indexPath)
         num = indexPath.row
         // チェックマークを入れる
