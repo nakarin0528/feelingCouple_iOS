@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="-320.68965517241384"/>
         </scene>
-        <!--View Controller-->
+        <!--Room View Controller-->
         <scene sceneID="dD8-tt-LOX">
             <objects>
-                <viewController id="HVK-eT-ucQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="room" id="HVK-eT-ucQ" customClass="RoomViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ehv-dP-nws"/>
                         <viewControllerLayoutGuide type="bottom" id="4J9-IS-tgv"/>
