@@ -10,6 +10,8 @@ import UIKit
 
 class WaitingAroundViewController: UIViewController {
 
+    var ble = BLE.sharedBle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,4 +23,8 @@ class WaitingAroundViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
+    @IBAction func testButton(_ sender: Any) {
+
+    }
 }

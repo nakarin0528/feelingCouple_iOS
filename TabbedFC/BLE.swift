@@ -14,8 +14,8 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     var isScanning = false
     var centralManager: CBCentralManager!
     var peripheral: CBPeripheral!
-    var personalCharacteristic: CBCharacteristic!
-    var roomCharacteristic: CBCharacteristic!
+    var writeCharacteristic: CBCharacteristic!
+    var readCharacteristic: CBCharacteristic!
     var myPeripheral: [CBPeripheral] = []
     var peripheralList: [String] = []
     static var flag = false
@@ -23,8 +23,8 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     static var isError = false
 
     
-    let roomUUID = "A001"
-    let personalUUID = "A002"
+    let readUUID = "A001"
+    let writeUUID = "A002"
     
     
     static let sharedBle = BLE()
@@ -163,19 +163,18 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
         }
         
         print("\(characteristics.count) 個のキャラクタリスティックを発見！ \(characteristics)")
-        
+        //Readプロパティを持つのキャラクタリスティックの値を読み出す
         for characteristic in characteristics {
-            if characteristic.uuid.isEqual(CBUUID(string: roomUUID)){
-                roomCharacteristic = characteristic
+            if characteristic.uuid.isEqual(CBUUID(string: readUUID)){
+                readCharacteristic = characteristic
+                peripheral.readValue(for: characteristic)
             }
-            //Readプロパティを持つのキャラクタリスティックの値を読み出す
-            if characteristic.uuid.isEqual(CBUUID(string: personalUUID)) {
-                personalCharacteristic = characteristic
+            
+            if characteristic.uuid.isEqual(CBUUID(string: writeUUID)) {
+                writeCharacteristic = characteristic
             }
             
         }
-        
-
             centralManager.stopScan()
 
     }
@@ -189,34 +188,45 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
         
         print("読み出し成功！service uuid: \(characteristic.service.uuid), characteristic uuid: \(characteristic.uuid), value: \(characteristic.value)")
         //欲しいキャラクタリスティックかどうかを判定
-        if characteristic.uuid.isEqual(CBUUID(string: personalUUID)){
-
+        if characteristic.uuid.isEqual(CBUUID(string: writeUUID)){
+            var byte: CUnsignedChar = 0
+            
+            // 1バイト取り出す
+            (characteristic.value as NSData?)?.getBytes(&byte, length: 1)
+            
+            print(byte)
         }
     }
+    
     
     //データ書き込み成功時
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
-        
-    }
-    
-    func peripheral(peripheral: CBPeripheral,
-                    didWriteValueForCharacteristic characteristic: CBCharacteristic,
-                    error: NSError?)
-    {
         if let error = error {
-            print("Write失敗...error: \(error)")
+            print("書き込み失敗...error: \(error), characteristic uuid: \(characteristic.uuid)")
             return
         }
-        
-        print("Write成功！")
     }
     
+    public func sendProfile(){
+        if self.peripheral.state.rawValue == 0 {
+            initBle()
+        }
+        var value: CUnsignedChar = 0xff << 0x00
+        
+        let data = NSData(bytes: &value, length: 1)
+        do{
+            try peripheral.writeValue(data as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        }catch{
+            initBle()
+        }
+    }
     
     
     func differentPeripheral(){
         BLE.isCorrectDevice = false
         centralManager.stopScan()
         }
+    
     
 }
 

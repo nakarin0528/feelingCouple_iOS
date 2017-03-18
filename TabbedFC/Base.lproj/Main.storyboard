@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -120,8 +120,6 @@
         <!--Profile-->
         <scene sceneID="nbT-D7-F92">
             <objects>
-                <exit id="rtn-CI-rXs" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LUU-j7-ZtY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="hQI-sA-4Jj" customClass="ProfileViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pD5-si-ap4"/>
@@ -218,6 +216,8 @@
                         <outlet property="nameText" destination="TJr-TF-pNS" id="teK-th-0Km"/>
                     </connections>
                 </viewController>
+                <exit id="rtn-CI-rXs" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LUU-j7-ZtY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-26" y="424"/>
         </scene>
@@ -322,10 +322,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwL-ew-soT">
+                                <rect key="frame" x="164" y="474" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="testButton:" destination="CAc-WU-cL7" eventType="touchUpInside" id="kyf-Pc-o0T"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dHl-Gm-GNm" firstAttribute="centerX" secondItem="3Oh-4V-vsW" secondAttribute="centerX" id="0wT-0F-BYb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dwL-ew-soT" secondAttribute="trailing" constant="149" id="Ixr-M3-uKv"/>
+                            <constraint firstItem="dwL-ew-soT" firstAttribute="top" secondItem="dHl-Gm-GNm" secondAttribute="bottom" constant="130" id="epi-wK-pK0"/>
                             <constraint firstItem="dHl-Gm-GNm" firstAttribute="centerY" secondItem="3Oh-4V-vsW" secondAttribute="centerY" id="luH-59-yU1"/>
                         </constraints>
                     </view>
