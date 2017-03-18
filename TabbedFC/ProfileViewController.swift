@@ -14,15 +14,20 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var backImageView: UIImageView!
     
     var profile = Profile.sharedProfile
-    var gender: Int = 0 // 0は男、1は女
-
-    var oya: Int = 0 // 0は子供、1は親　makeroom押したら1になる
+    var gender = Profile.sharedProfile.gender // 0は男、1は女
+    var oya = Profile.sharedProfile.oya// 0は子供、1は親　makeroom押したら1になる
     
-    var profArray: Array<Any> = []
+    
+    var profArray: Array<Any> = Profile.sharedProfile.profArray
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let defaults = UserDefaults.standard
+        if let theProf = defaults.array(forKey: "myProf"){
+            self.nameText.text = theProf[0] as! String
+            backImageView.image = theProf[2] as! UIImage
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -67,12 +72,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             let cameraPicker = UIImagePickerController()
             cameraPicker.sourceType = sourceType
             cameraPicker.delegate = self
-            self.present(cameraPicker, animated: true, completion: nil)
+            //self.present(cameraPicker, animated: true, completion: nil)
         }
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             backImageView.image = pickedImage
+            profArray.append(pickedImage)
             UIImageWriteToSavedPhotosAlbum(pickedImage, self, nil, nil)
         }
         picker.dismiss(animated: true, completion: nil)
@@ -91,9 +97,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func finishButton(_ sender: Any) {
         profile.name = nameText.text!
         profArray = [profile.name, gender, oya]
-//        print(profArray[0])
-//        print(profArray[1])
-//        print(profArray[2])
+        let defaults = UserDefaults.standard
+        defaults.set(profArray, forKey: "myProf")
     }
 
-    }
+}
