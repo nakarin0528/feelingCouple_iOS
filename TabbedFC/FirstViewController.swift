@@ -31,7 +31,7 @@ class FirstViewController: UIViewController, GetProfileDeligate {
     override func viewDidAppear(_ animated: Bool) {
         getProfile()
         if myName != "" {
-            userName.text = myName
+            userName.text = myName + "　の"
         }
     }
 
