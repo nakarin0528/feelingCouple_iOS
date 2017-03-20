@@ -41,6 +41,13 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
         timer.fire()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        /*
+         プロフィール未入力時にアラートを出してプロフィール入力画面にとばす．
+         */
+    }
+    
     func update(tm: Timer) {
         //発見したデバイスを取得
         getPeripheral()

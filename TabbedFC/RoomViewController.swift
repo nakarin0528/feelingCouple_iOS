@@ -67,10 +67,18 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        /*
+         プロフィール未入力時にアラートを出してプロフィール入力画面にとばす．
+         */
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*
