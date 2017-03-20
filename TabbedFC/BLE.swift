@@ -178,6 +178,7 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
             
             if characteristic.uuid.isEqual(CBUUID(string: writeUUID)) {
                 writeCharacteristic = characteristic
+                sendProfile()
             }
             
         }
@@ -213,30 +214,31 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
         }
     }
     
+    //プロフィールを送る関数
     public func sendProfile(){
         
-        let Strtmp : NSData! = name.data(using:String.Encoding.utf8) as NSData!
-        let Inttmp : NSData! = NSData(bytes: &gender,length: 1)
-        
-        
-        let tmparray:[NSData]=[Strtmp,Inttmp]
+        let namtmp = name.data(using:String.Encoding.utf8)
+        let gentmp : NSData! = NSData(bytes: &gender,length: 1)
+        let partmp : NSData! = NSData(bytes: &oya,length: 1)
         
         
         if self.peripheral.state.rawValue == 0 {
             initBle()
         }
-        var value: CUnsignedChar = 0xff << 0x00
-        
-        for i in 0...1{
-        
-        let data = NSData(bytes: &value, length: 1)
+    
+ 
         do{
-            try peripheral.writeValue(tmparray[i] as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            try peripheral.writeValue(namtmp! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            
+            try peripheral.writeValue(gentmp! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            
+            try peripheral.writeValue(partmp! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            
         }catch{
             initBle()
         }
     }
-    }
+
     
     func differentPeripheral(){
         BLE.isCorrectDevice = false
