@@ -16,6 +16,11 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     var peripheral:CBPeripheralManagerDelegate!
     var readCharacteristic: CBMutableCharacteristic!
     var writeCharacteristic: CBMutableCharacteristic!
+    var personal: [Any] = []
+    //受け取り回数
+    var count = 0
+    
+    var personalDeligate: GetPersonalDataDeligate?
     
     let serviceUUID = CBUUID(string: "A000")
     
@@ -148,11 +153,21 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
         print("\(requests.count) 件のWriteリクエストを受信！")
         
+        
         for request in requests {
             print("Requested value:\(request.value) service uuid:\(request.characteristic.service.uuid) characteristic uuid:\(request.characteristic.uuid)")
         
             let text = NSString(data: request.value!, encoding: String.Encoding.utf8.rawValue)
             print(text!)
+            if count <= 1 {
+                personal.append(text!)
+                if count == 1 {
+                    //データを処理するクラスに渡す
+                    personalDeligate!.setPersonalData(value: personal)
+                    count = 0
+                }
+                count = count + 1
+            }
             if request.characteristic.uuid.isEqual(writeCharacteristic.uuid)
             {
                 // CBMutableCharacteristicのvalueに、CBATTRequestのvalueをセット
@@ -161,6 +176,10 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         }
         // リクエストに応答
         peripheralManager.respond(to: requests[0] , withResult: CBATTError.Code.success)
+    }
+    
+    public func getPersonalData(delegate: GetPersonalDataDeligate) {
+        self.personalDeligate = delegate
     }
     
     func advertise() {
