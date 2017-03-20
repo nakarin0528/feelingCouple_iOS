@@ -11,6 +11,12 @@ import CoreBluetooth
 
 class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     
+    var profile = Profile.sharedProfile
+    var gender = Profile.sharedProfile.gender
+    var name=Profile.sharedProfile.name
+    var oya=Profile.sharedProfile.oya
+    
+    
     var isScanning = false
     var centralManager: CBCentralManager!
     var peripheral: CBPeripheral!
@@ -208,19 +214,29 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     }
     
     public func sendProfile(){
+        
+        let Strtmp : NSData! = name.data(using:String.Encoding.utf8) as NSData!
+        let Inttmp : NSData! = NSData(bytes: &gender,length: 1)
+        
+        
+        let tmparray:[NSData]=[Strtmp,Inttmp]
+        
+        
         if self.peripheral.state.rawValue == 0 {
             initBle()
         }
         var value: CUnsignedChar = 0xff << 0x00
         
+        for i in 0...1{
+        
         let data = NSData(bytes: &value, length: 1)
         do{
-            try peripheral.writeValue(data as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            try peripheral.writeValue(tmparray[i] as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
         }catch{
             initBle()
         }
     }
-    
+    }
     
     func differentPeripheral(){
         BLE.isCorrectDevice = false
