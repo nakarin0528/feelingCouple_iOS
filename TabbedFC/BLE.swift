@@ -12,16 +12,13 @@ import CoreBluetooth
 class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     
     var profile = Profile.sharedProfile
-    var gender = Profile.sharedProfile.gender
-    var name = Profile.sharedProfile.name
-    var oya = Profile.sharedProfile.oya
-    
     
     var isScanning = false
     var centralManager: CBCentralManager!
     var peripheral: CBPeripheral!
     var writeCharacteristic: CBCharacteristic!
-    var readCharacteristic: CBCharacteristic!
+    var manReadCharacteristic: CBCharacteristic!
+    var womanReadCharacteristic: CBCharacteristic!
     var myPeripheral: [CBPeripheral] = []
     var peripheralList: [String] = []
     static var flag = false
@@ -29,8 +26,9 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     static var isError = false
 
     
-    let readUUID = "A001"
-    let writeUUID = "A002"
+    let manUUID = "A001"
+    let womanUUID = "A002"
+    let writeUUID = "A003"
     
     
     static let sharedBle = BLE()
@@ -170,10 +168,16 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
         }
         
         print("\(characteristics.count) 個のキャラクタリスティックを発見！ \(characteristics)")
-        //Readプロパティを持つのキャラクタリスティックの値を読み出す
+        
         for characteristic in characteristics {
-            if characteristic.uuid.isEqual(CBUUID(string: readUUID)){
-                readCharacteristic = characteristic
+            //男のReadプロパティを持つのキャラクタリスティックの値を読み出す
+            if characteristic.uuid.isEqual(CBUUID(string: manUUID)){
+                manReadCharacteristic = characteristic
+                peripheral.readValue(for: characteristic)
+            }
+            //女のReadプロパティを持つのキャラクタリスティックの値を読み出す
+            if characteristic.uuid.isEqual(CBUUID(string: womanUUID)){
+                womanReadCharacteristic = characteristic
                 peripheral.readValue(for: characteristic)
             }
             
@@ -218,20 +222,20 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     //プロフィールを送る関数
     public func sendProfile(){
         
-        let namtmp = name.data(using:String.Encoding.utf8)
-        let gentmp = gender.data(using:String.Encoding.utf8)
+        let namtmp = Profile.sharedProfile.name.data(using:String.Encoding.utf8)
+        let gentmp = Profile.sharedProfile.gender.data(using:String.Encoding.utf8)
         
         if self.peripheral.state.rawValue == 0 {
             initBle()
         }
     
         do{
-            print(name)
-            print(gender)
             try peripheral.writeValue(namtmp! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
             
             try peripheral.writeValue(gentmp! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
-            
+            //一旦接続を切る
+            centralManager = CBCentralManager(delegate: self, queue: nil)
+            centralManager.stopScan()
         }catch{
             initBle()
         }

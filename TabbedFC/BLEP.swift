@@ -16,7 +16,8 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     @IBOutlet var advertiseBtn: UIButton!
     var peripheralManager: CBPeripheralManager!
     var peripheral:CBPeripheralManagerDelegate!
-    var readCharacteristic: CBMutableCharacteristic!
+    var manCharacteristic: CBMutableCharacteristic!
+    var womanCharacteristic: CBMutableCharacteristic!
     var writeCharacteristic: CBMutableCharacteristic!
     var personal: [Any] = []
     //受け取り回数
@@ -47,21 +48,30 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         let service = CBMutableService(type: serviceUUID, primary: true)
         
         // キャラクタリスティックを作成
-        let readUUID = CBUUID(string: "A001")
-        let writeUUID = CBUUID(string: "A002")
+        let manUUID = CBUUID(string: "A001")
+        let womanUUID = CBUUID(string: "A002")
+        let writeUUID = CBUUID(string: "A003")
         
-        let readProperties: CBCharacteristicProperties = [.read]
+        let manReadProperties: CBCharacteristicProperties = [.read]
+        let womanReadProperties: CBCharacteristicProperties = [.read]
         let writeProperties: CBCharacteristicProperties = [.write]
         
-        let readPermissions: CBAttributePermissions = [.readable]
+        let manReadPermissions: CBAttributePermissions = [.readable]
+        let womanReadPermissions: CBAttributePermissions = [.readable]
         let writePermissions: CBAttributePermissions = [.writeable]
 
         
-        readCharacteristic = CBMutableCharacteristic(
-            type: readUUID,
-            properties: readProperties,
+        manCharacteristic = CBMutableCharacteristic(
+            type: manUUID,
+            properties: manReadProperties,
             value: nil,
-            permissions: readPermissions)
+            permissions: manReadPermissions)
+        
+        womanCharacteristic = CBMutableCharacteristic(
+            type: womanUUID,
+            properties: womanReadProperties,
+            value: nil,
+            permissions: womanReadPermissions)
         
         writeCharacteristic = CBMutableCharacteristic(
             type: writeUUID,
@@ -70,7 +80,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
             permissions: writePermissions)
         
         // キャラクタリスティックをサービスにセット
-        service.characteristics = [readCharacteristic, writeCharacteristic]
+        service.characteristics = [manCharacteristic, womanCharacteristic, writeCharacteristic]
         
         // サービスを Peripheral Manager にセット
         peripheralManager.add(service)
@@ -78,7 +88,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         // 値をセット
         let value = UInt8(arc4random() & 0xFF)
         let data = Data(bytes: UnsafePointer<UInt8>([value]), count: 1)
-        readCharacteristic.value = data;
+        manCharacteristic.value = data;
     }
     
     private func startAdvertise() {
@@ -139,10 +149,10 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         print("Readリクエスト受信！ requested service uuid:\(request.characteristic.service.uuid) characteristic uuid:\(request.characteristic.uuid) value:\(request.characteristic.value)")
         
         // プロパティで保持しているキャラクタリスティックへのReadリクエストかどうかを判定
-        if request.characteristic.uuid.isEqual(readCharacteristic.uuid) {
+        if request.characteristic.uuid.isEqual(manCharacteristic.uuid) {
             
             // CBMutableCharacteristicのvalueをCBATTRequestのvalueにセット
-            request.value = readCharacteristic.value;
+            request.value = manCharacteristic.value;
             
             // リクエストに応答
             peripheralManager.respond(to: request, withResult: CBATTError.Code.success)
@@ -157,23 +167,24 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         for request in requests {
             print("Requested value:\(request.value) service uuid:\(request.characteristic.service.uuid) characteristic uuid:\(request.characteristic.uuid)")
         
-            let text = NSString(data: request.value!, encoding: String.Encoding.utf8.rawValue)
-            print(text!)
-            personal.append(text!)
-            if count <= 1 {
-                if count == 1 {
-                    //データを処理するクラスに渡す
-                    data.setPersonalData(value: personal)
-                    personal.removeAll()
-                    count = 0
-                } else {
-                    count = count + 1
-                }
-            }
-            if request.characteristic.uuid.isEqual(writeCharacteristic.uuid)
-            {
+            if request.characteristic.uuid.isEqual(writeCharacteristic.uuid){
                 // CBMutableCharacteristicのvalueに、CBATTRequestのvalueをセット
                 writeCharacteristic.value = request.value;
+                
+                let text = NSString(data: request.value!, encoding: String.Encoding.utf8.rawValue)
+                print(text!)
+                personal.append(text!)
+                
+                if count <= 1 {
+                    if count == 1 {
+                        //データを処理するクラスに渡す
+                        data.setPersonalData(value: personal)
+                        personal.removeAll()
+                        count = 0
+                    } else {
+                        count = count + 1
+                    }
+                }
             }
         }
         // リクエストに応答
