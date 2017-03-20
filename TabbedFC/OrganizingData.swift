@@ -8,13 +8,23 @@
 
 import Foundation
 
-class OrganizingData: GetPersonalDataDeligate {
+class OrganizingData: NSObject{
+    
+    static let sharedData = OrganizingData()
+    
+    private override init(){
+        super.init()
+    }
+    
     var participants = [[Any]]()
     var males = [[Any]]()
     var females = [[Any]]()
     
     func setPersonalData(value: [Any]) {
+
         participants.append(value)
+        print("受けとったデータ")
+        print(participants)
     }
 
     func separateByGender() {

@@ -11,6 +11,8 @@ import CoreBluetooth
 
 class BLEP: NSObject, CBPeripheralManagerDelegate {
     
+    var data = OrganizingData.sharedData
+    
     @IBOutlet var advertiseBtn: UIButton!
     var peripheralManager: CBPeripheralManager!
     var peripheral:CBPeripheralManagerDelegate!
@@ -19,8 +21,6 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     var personal: [Any] = []
     //受け取り回数
     var count = 0
-    
-    var personalDeligate: GetPersonalDataDeligate?
     
     let serviceUUID = CBUUID(string: "A000")
     
@@ -161,9 +161,9 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
             print(text!)
             if count <= 1 {
                 personal.append(text!)
-                if count == 1 {
+                if count == 0 {
                     //データを処理するクラスに渡す
-                    personalDeligate!.setPersonalData(value: personal)
+                    data.setPersonalData(value: personal)
                     count = 0
                 }
                 count = count + 1
@@ -176,10 +176,6 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         }
         // リクエストに応答
         peripheralManager.respond(to: requests[0] , withResult: CBATTError.Code.success)
-    }
-    
-    public func getPersonalData(delegate: GetPersonalDataDeligate) {
-        self.personalDeligate = delegate
     }
     
     func advertise() {
