@@ -12,7 +12,7 @@ import CoreBluetooth
 class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     
     var profile = Profile.sharedProfile
-    var gender = String(Profile.sharedProfile.gender)
+    var gender = Profile.sharedProfile.gender
     var name = Profile.sharedProfile.name
     var oya = Profile.sharedProfile.oya
     
