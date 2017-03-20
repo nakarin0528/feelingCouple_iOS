@@ -150,14 +150,15 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         
         for request in requests {
             print("Requested value:\(request.value) service uuid:\(request.characteristic.service.uuid) characteristic uuid:\(request.characteristic.uuid)")
-            
+        
+            let text = NSString(data: request.value!, encoding: String.Encoding.utf8.rawValue)
+            print(text!)
             if request.characteristic.uuid.isEqual(writeCharacteristic.uuid)
             {
                 // CBMutableCharacteristicのvalueに、CBATTRequestのvalueをセット
                 writeCharacteristic.value = request.value;
             }
         }
-        
         // リクエストに応答
         peripheralManager.respond(to: requests[0] , withResult: CBATTError.Code.success)
     }

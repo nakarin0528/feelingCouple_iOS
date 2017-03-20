@@ -109,6 +109,7 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     //ペリフェラルへの接続が成功すると呼ばれる
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("接続成功！")
+        print(centralManager.state)
         //デリゲートをセット
         peripheral.delegate = self
         //サービス探索開始
@@ -172,6 +173,7 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
             
             if characteristic.uuid.isEqual(CBUUID(string: writeUUID)) {
                 writeCharacteristic = characteristic
+                sendProfile()
             }
             
         }
@@ -211,11 +213,10 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
         if self.peripheral.state.rawValue == 0 {
             initBle()
         }
-        var value: CUnsignedChar = 0xff << 0x00
-        
-        let data = NSData(bytes: &value, length: 1)
+        let value = "Bluetoothが大好きなフレンズなんだね！"
+        let data = value.data(using: String.Encoding.utf8)
         do{
-            try peripheral.writeValue(data as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            try peripheral.writeValue(data! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
         }catch{
             initBle()
         }
