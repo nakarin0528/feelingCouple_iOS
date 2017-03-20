@@ -219,20 +219,15 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
         
         let namtmp = name.data(using:String.Encoding.utf8)
         let gentmp : NSData! = NSData(bytes: &gender,length: 1)
-        let partmp : NSData! = NSData(bytes: &oya,length: 1)
-        
         
         if self.peripheral.state.rawValue == 0 {
             initBle()
         }
     
- 
         do{
             try peripheral.writeValue(namtmp! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
             
             try peripheral.writeValue(gentmp! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
-            
-            try peripheral.writeValue(partmp! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
             
         }catch{
             initBle()
