@@ -159,14 +159,16 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         
             let text = NSString(data: request.value!, encoding: String.Encoding.utf8.rawValue)
             print(text!)
+            personal.append(text!)
             if count <= 1 {
-                personal.append(text!)
-                if count == 0 {
+                if count == 1 {
                     //データを処理するクラスに渡す
                     data.setPersonalData(value: personal)
+                    personal.removeAll()
                     count = 0
+                } else {
+                    count = count + 1
                 }
-                count = count + 1
             }
             if request.characteristic.uuid.isEqual(writeCharacteristic.uuid)
             {

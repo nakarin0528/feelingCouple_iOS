@@ -12,9 +12,9 @@ import CoreBluetooth
 class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     
     var profile = Profile.sharedProfile
-    var gender = String(Profile.sharedProfile.gender)
-    var name = Profile.sharedProfile.name
-    var oya = Profile.sharedProfile.oya
+    var gender = Profile.sharedProfile.gender
+    var name=Profile.sharedProfile.name
+    var oya=Profile.sharedProfile.oya
     
     
     var isScanning = false
@@ -219,19 +219,24 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     public func sendProfile(){
         
         let namtmp = name.data(using:String.Encoding.utf8)
-        let gentmp = gender.data(using:String.Encoding.utf8)
+        let gentmp : NSData! = NSData(bytes: &gender,length: 1)
         
         if self.peripheral.state.rawValue == 0 {
             initBle()
         }
+<<<<<<< HEAD
+        let value = "Bluetoothが大好きなフレンズなんだね！"
+        let data = value.data(using: String.Encoding.utf8)
+        do{
+            try peripheral.writeValue(data! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
+=======
     
         do{
-            print(name)
-            print(gender)
             try peripheral.writeValue(namtmp! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
             
             try peripheral.writeValue(gentmp! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
             
+>>>>>>> ble2_2
         }catch{
             initBle()
         }
