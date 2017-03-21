@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -317,17 +317,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待機" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHl-Gm-GNm">
-                                <rect key="frame" x="170" y="323" width="35" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="司会者にいいよって言われたら押してね" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHl-Gm-GNm">
+                                <rect key="frame" x="13.5" y="322" width="348.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwL-ew-soT">
-                                <rect key="frame" x="164" y="474" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="148" y="475" width="62" height="30"/>
+                                <state key="normal" title="スタート"/>
                                 <connections>
-                                    <action selector="testButton:" destination="CAc-WU-cL7" eventType="touchUpInside" id="kyf-Pc-o0T"/>
+                                    <action selector="startButton:" destination="CAc-WU-cL7" eventType="touchUpInside" id="GOS-aI-iVm"/>
+                                    <segue destination="JJI-je-eGy" kind="show" id="V19-Lm-MAg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -342,7 +343,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2j0-L0-jjb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2472" y="546"/>
+            <point key="canvasLocation" x="2490" y="358"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NDy-lt-vaN">
+            <objects>
+                <viewController id="JJI-je-eGy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GSt-3e-IJs"/>
+                        <viewControllerLayoutGuide type="bottom" id="vMr-3l-NSj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T6C-Ak-n7h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="izS-Hs-thr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3242" y="360"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

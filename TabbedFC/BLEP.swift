@@ -89,6 +89,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         let value = UInt8(arc4random() & 0xFF)
         let data = Data(bytes: UnsafePointer<UInt8>([value]), count: 1)
         manCharacteristic.value = data;
+
     }
     
     private func startAdvertise() {
@@ -153,6 +154,15 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
             
             // CBMutableCharacteristicのvalueをCBATTRequestのvalueにセット
             request.value = manCharacteristic.value;
+            
+            // リクエストに応答
+            peripheralManager.respond(to: request, withResult: CBATTError.Code.success)
+        }
+        // プロパティで保持しているキャラクタリスティックへのReadリクエストかどうかを判定
+        if request.characteristic.uuid.isEqual(womanCharacteristic.uuid) {
+            
+            // CBMutableCharacteristicのvalueをCBATTRequestのvalueにセット
+            request.value = womanCharacteristic.value;
             
             // リクエストに応答
             peripheralManager.respond(to: request, withResult: CBATTError.Code.success)

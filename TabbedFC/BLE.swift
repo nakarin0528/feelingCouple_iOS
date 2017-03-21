@@ -24,6 +24,8 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     static var flag = false
     static var isCorrectDevice = false
     static var isError = false
+    
+    var willPartner: [String] = []
 
     
     let manUUID = "A001"
@@ -200,13 +202,14 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
         
         print("読み出し成功！service uuid: \(characteristic.service.uuid), characteristic uuid: \(characteristic.uuid), value: \(characteristic.value)")
         //欲しいキャラクタリスティックかどうかを判定
-        if characteristic.uuid.isEqual(CBUUID(string: writeUUID)){
-            var byte: CUnsignedChar = 0
-            
-            // 1バイト取り出す
-            (characteristic.value as NSData?)?.getBytes(&byte, length: 1)
-            
-            print(byte)
+        if characteristic.uuid.isEqual(CBUUID(string: manUUID)){
+            let text = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue)
+            print(text!)
+        }
+        if characteristic.uuid.isEqual(CBUUID(string: womanUUID)){
+            let text = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue)
+            print(text!)
+
         }
     }
     
@@ -241,6 +244,33 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
         }
     }
 
+    public func manRead(){
+        centralManager.connect(peripheral, options: nil)
+        
+        for i in 0...1 {
+            do{
+                peripheral.readValue(for: manReadCharacteristic)
+                
+            }catch{
+                initBle()
+            }
+        }
+        //一旦接続を切る
+        centralManager = CBCentralManager(delegate: self, queue: nil)
+        centralManager.stopScan()
+    }
+    
+    public func womanRead(){
+        centralManager.connect(peripheral, options: nil)
+        do{
+            peripheral.readValue(for: womanReadCharacteristic)
+            //一旦接続を切る
+            centralManager = CBCentralManager(delegate: self, queue: nil)
+            centralManager.stopScan()
+        }catch{
+            initBle()
+        }
+    }
     
     func differentPeripheral(){
         BLE.isCorrectDevice = false

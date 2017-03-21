@@ -11,6 +11,7 @@ import UIKit
 class WaitingAroundViewController: UIViewController {
 
     var ble = BLE.sharedBle
+    var profile = Profile.sharedProfile
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,14 @@ class WaitingAroundViewController: UIViewController {
     }
     
 
-    @IBAction func testButton(_ sender: Any) {
-
+    @IBAction func startButton(_ sender: Any) {
+        if profile.gender == "0" {
+            ble.manRead()
+        } else {
+            ble.womanRead()
+        }
     }
+    
+
+
 }
