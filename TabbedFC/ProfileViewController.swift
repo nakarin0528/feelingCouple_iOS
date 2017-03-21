@@ -16,19 +16,21 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     var profile = Profile.sharedProfile
     var gender = Profile.sharedProfile.gender // 0は男、1は女
-    var oya = Profile.sharedProfile.oya// 0は子供、1は親　makeroom押したら1になる
+    var cflag = 0 //1ならカメラ0ならアルバム
     
     
 //    var profArray: Array<Any> = Profile.sharedProfile.profArray
     
-    let defaults = UserDefaults.standard
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var theProf: Array<Any> = []
+        var theProf: Array<Any> = [Profile.sharedProfile.name,Profile.sharedProfile.gender]
         theProf = Profile.sharedProfile.readProf()
+        //print(Profile.sharedProfile.gender)
         nameText.text = theProf[0] as! String
         genderSelection.selectedSegmentIndex = Int(theProf[1] as! String)!
+        
         // Do any additional setup after loading the view.
     }
     
@@ -57,7 +59,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
-    var cflag = 0 //1ならカメラ0ならアルバム
+
     @IBAction func camera(_ sender: Any) {
         cflag = 1
         let sourceType: UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.camera
@@ -82,7 +84,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             backImageView.image = pickedImage
-            Profile.sharedProfile.profArray.append(pickedImage)
+//            Profile.sharedProfile.profArray.append(pickedImage)
             if cflag == 1{
                 UIImageWriteToSavedPhotosAlbum(pickedImage, self, nil, nil)
             }
@@ -102,10 +104,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
    
     @IBAction func finishButton(_ sender: Any) {
         profile.name = nameText.text!
-        Profile.sharedProfile.profArray = [profile.name, gender, oya]
+        profile.profArray[0] = nameText.text!
+        profile.profArray[1] = gender
         print(Profile.sharedProfile.profArray)
         Profile.sharedProfile.saveProf()
         print(Profile.sharedProfile.readProf())
+        print(Profile.sharedProfile.profArray)
     }
+
 
 }

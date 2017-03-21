@@ -14,8 +14,7 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     var profile = Profile.sharedProfile
     var gender = Profile.sharedProfile.gender
     var name = Profile.sharedProfile.name
-    var oya = Profile.sharedProfile.oya
-    
+
     
     var isScanning = false
     var centralManager: CBCentralManager!

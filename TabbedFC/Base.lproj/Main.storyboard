@@ -156,8 +156,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="完了"/>
                                 <connections>
-                                    <action selector="finishButton:" destination="hQI-sA-4Jj" eventType="touchUpInside" id="oX9-eY-sBc"/>
-                                    <segue destination="rtn-CI-rXs" kind="unwind" unwindAction="unwindToTopWithSegue:" id="AXS-TH-sOm"/>
+                                    <action selector="finishButton:" destination="hQI-sA-4Jj" eventType="touchDown" id="Df8-98-ZYP"/>
+                                    <segue destination="rtn-CI-rXs" kind="unwind" unwindAction="unwindToTopWithSegue:" id="A7q-Ur-GgN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="092-uA-gDt">
