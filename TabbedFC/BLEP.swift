@@ -20,6 +20,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     var womanCharacteristic: CBMutableCharacteristic!
     var writeCharacteristic: CBMutableCharacteristic!
     var personal: [Any] = []
+    var names: [String] = []
     //受け取り回数
     var count = 0
     
@@ -182,6 +183,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
                         personal.removeAll()
                         count = 0
                     } else {
+                        names.append(text! as String)
                         count = count + 1
                     }
                 }

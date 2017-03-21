@@ -13,7 +13,7 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var blep = BLEP.sharedBleP
     var timer: Timer!
-    private var myItems: NSArray = []
+    private var myItems: [String] = []
     @IBOutlet weak var participants: UITableView!
     
     override func viewDidLoad() {
@@ -34,12 +34,13 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         //Viewに追加する
         self.view.addSubview(participants)
 
-        // Do any additional setup after loading the view.
+        timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+        timer.fire()
     }
     
     func update(tm: Timer){
         //接続されたセントラルの名前をテーブルに追加
-        
+        myItems = blep.names
         //テーブルビュー更新
         participants.reloadData()
     }
@@ -56,8 +57,9 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         // セルが選択された時の背景色を消す
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         // Cellに値を設定する.
+        //print(myItems)
         cell.textLabel!.text = "\(myItems[indexPath.row])"
-        
+
         return cell
     }
     //画面切り替わった時にタイマーを止める
