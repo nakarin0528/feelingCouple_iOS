@@ -12,6 +12,7 @@ import CoreBluetooth
 class BLEP: NSObject, CBPeripheralManagerDelegate {
     
     var data = OrganizingData.sharedData
+    var profile = Profile.sharedProfile
     
     @IBOutlet var advertiseBtn: UIButton!
     var peripheralManager: CBPeripheralManager!
@@ -96,7 +97,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     private func startAdvertise() {
         // アドバタイズメントデータを作成する
         let advertisementData = [
-            CBAdvertisementDataLocalNameKey: "Test Device",
+            CBAdvertisementDataLocalNameKey: profile.name+"'s Room",
             CBAdvertisementDataServiceUUIDsKey: [serviceUUID]
             ] as [String : Any]
         

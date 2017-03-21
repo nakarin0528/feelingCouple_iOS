@@ -82,7 +82,6 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at:indexPath)
         // チェックマークを外す
-        print("aaa")
         cell?.accessoryType = .none
     }
     
