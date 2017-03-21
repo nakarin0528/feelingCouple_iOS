@@ -28,14 +28,14 @@ class OrganizingData: NSObject{
     }
 
     func separateByGender() {
-        for i in 0...participants.count {
+        for i in 0..<participants.count {
             if (participants[i][1] as! String) == "0" {
                 males.append(participants[i])
             } else {
                 females.append(participants[i])
             }
         }
-        print(males)
-        print(females)
+        print("男性"+"\(males)")
+        print("女性"+"\(females)")
     }
 }
