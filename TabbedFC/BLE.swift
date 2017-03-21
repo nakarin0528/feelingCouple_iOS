@@ -12,7 +12,6 @@ import CoreBluetooth
 class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     
     var profile = Profile.sharedProfile
-    
     var isScanning = false
     var centralManager: CBCentralManager!
     var peripheral: CBPeripheral!
