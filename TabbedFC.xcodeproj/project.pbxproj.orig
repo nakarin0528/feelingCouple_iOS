@@ -12,18 +12,20 @@
 		DB08DD671E765A6F008DA4D1 /* GetPeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08DD661E765A6F008DA4D1 /* GetPeripheralDelegate.swift */; };
 		DB08DD691E7669D3008DA4D1 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08DD681E7669D3008DA4D1 /* Loading.swift */; };
 		DB08DD6D1E766E50008DA4D1 /* WaitingAroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08DD6C1E766E50008DA4D1 /* WaitingAroundViewController.swift */; };
+		DB0B8E6A1E78FDE800D2DCCB /* BLEP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8E691E78FDE800D2DCCB /* BLEP.swift */; };
 		DB972FB51E705E8200883A5F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB972FB41E705E8200883A5F /* ProfileViewController.swift */; };
+		DBEA0BAB1E7D2AAB0045CA0E /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */; };
 		DED073351E6C246D00092366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED073341E6C246D00092366 /* AppDelegate.swift */; };
 		DED073371E6C246D00092366 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED073361E6C246D00092366 /* FirstViewController.swift */; };
 		DED073391E6C246D00092366 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED073381E6C246D00092366 /* SecondViewController.swift */; };
 		DED0733C1E6C246D00092366 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED0733A1E6C246D00092366 /* Main.storyboard */; };
 		DED0733E1E6C246D00092366 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED0733D1E6C246D00092366 /* Assets.xcassets */; };
 		DED073411E6C246D00092366 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DED0733F1E6C246D00092366 /* LaunchScreen.storyboard */; };
+		DEE86D1D1E7F66C5005985E9 /* OrganizingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE86D1C1E7F66C5005985E9 /* OrganizingData.swift */; };
 		ED3D20941E6E5F9700643353 /* GetProfileDeligate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D20931E6E5F9700643353 /* GetProfileDeligate.swift */; };
 		ED3D20961E6E629100643353 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D20951E6E629100643353 /* Profile.swift */; };
 		EDAC0FF21E77BA8D00ADADDA /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = EDAC0FF01E77BA8D00ADADDA /* camera.png */; };
 		EDAC0FF31E77BA8D00ADADDA /* library.png in Resources */ = {isa = PBXBuildFile; fileRef = EDAC0FF11E77BA8D00ADADDA /* library.png */; };
-		EDAC0FF71E77BB7D00ADADDA /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAC0FF61E77BB7D00ADADDA /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +34,9 @@
 		DB08DD661E765A6F008DA4D1 /* GetPeripheralDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPeripheralDelegate.swift; sourceTree = "<group>"; };
 		DB08DD681E7669D3008DA4D1 /* Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		DB08DD6C1E766E50008DA4D1 /* WaitingAroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingAroundViewController.swift; sourceTree = "<group>"; };
+		DB0B8E691E78FDE800D2DCCB /* BLEP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEP.swift; sourceTree = "<group>"; };
 		DB972FB41E705E8200883A5F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		DED073311E6C246D00092366 /* TabbedFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabbedFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED073341E6C246D00092366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DED073361E6C246D00092366 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -41,11 +45,11 @@
 		DED0733D1E6C246D00092366 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DED073401E6C246D00092366 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DED073421E6C246D00092366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEE86D1C1E7F66C5005985E9 /* OrganizingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizingData.swift; sourceTree = "<group>"; };
 		ED3D20931E6E5F9700643353 /* GetProfileDeligate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProfileDeligate.swift; sourceTree = "<group>"; };
 		ED3D20951E6E629100643353 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		EDAC0FF01E77BA8D00ADADDA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		EDAC0FF11E77BA8D00ADADDA /* library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = library.png; sourceTree = "<group>"; };
-		EDAC0FF61E77BB7D00ADADDA /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = ../CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,17 +89,16 @@
 				DED073381E6C246D00092366 /* SecondViewController.swift */,
 				DB972FB41E705E8200883A5F /* ProfileViewController.swift */,
 				DB08DD621E765436008DA4D1 /* BLE.swift */,
+				DB0B8E691E78FDE800D2DCCB /* BLEP.swift */,
+				DEE86D1C1E7F66C5005985E9 /* OrganizingData.swift */,
 				ED3D20931E6E5F9700643353 /* GetProfileDeligate.swift */,
 				ED3D20951E6E629100643353 /* Profile.swift */,
-<<<<<<< HEAD
 				DB08DD641E765A5F008DA4D1 /* AroundSerchViewController.swift */,
+				DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */,
 				DB08DD661E765A6F008DA4D1 /* GetPeripheralDelegate.swift */,
-=======
-				EDAC0FF61E77BB7D00ADADDA /* CameraViewController.swift */,
 				DED0733A1E6C246D00092366 /* Main.storyboard */,
 				EDAC0FF01E77BA8D00ADADDA /* camera.png */,
 				EDAC0FF11E77BA8D00ADADDA /* library.png */,
->>>>>>> profile
 				DED0733D1E6C246D00092366 /* Assets.xcassets */,
 				DED0733F1E6C246D00092366 /* LaunchScreen.storyboard */,
 				DED073421E6C246D00092366 /* Info.plist */,
@@ -136,10 +139,10 @@
 					DED073301E6C246D00092366 = {
 						CreatedOnToolsVersion = 8.2.1;
 <<<<<<< HEAD
-						DevelopmentTeam = KE34B4UU7B;
+						DevelopmentTeam = CG6F853P6N;
 =======
-						DevelopmentTeam = 893D7556GH;
->>>>>>> profile
+						DevelopmentTeam = KE34B4UU7B;
+>>>>>>> shoriPE
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -184,19 +187,18 @@
 			files = (
 				DB08DD6D1E766E50008DA4D1 /* WaitingAroundViewController.swift in Sources */,
 				DB08DD631E765437008DA4D1 /* BLE.swift in Sources */,
+				DBEA0BAB1E7D2AAB0045CA0E /* RoomViewController.swift in Sources */,
 				DED073391E6C246D00092366 /* SecondViewController.swift in Sources */,
 				DB08DD691E7669D3008DA4D1 /* Loading.swift in Sources */,
+				DB0B8E6A1E78FDE800D2DCCB /* BLEP.swift in Sources */,
 				ED3D20961E6E629100643353 /* Profile.swift in Sources */,
 				DED073351E6C246D00092366 /* AppDelegate.swift in Sources */,
 				ED3D20941E6E5F9700643353 /* GetProfileDeligate.swift in Sources */,
-<<<<<<< HEAD
 				DB08DD671E765A6F008DA4D1 /* GetPeripheralDelegate.swift in Sources */,
-=======
-				EDAC0FF71E77BB7D00ADADDA /* CameraViewController.swift in Sources */,
->>>>>>> profile
 				DB972FB51E705E8200883A5F /* ProfileViewController.swift in Sources */,
 				DED073371E6C246D00092366 /* FirstViewController.swift in Sources */,
 				DB08DD651E765A5F008DA4D1 /* AroundSerchViewController.swift in Sources */,
+				DEE86D1D1E7F66C5005985E9 /* OrganizingData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,18 +321,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 <<<<<<< HEAD
+				DEVELOPMENT_TEAM = CG6F853P6N;
+				INFOPLIST_FILE = TabbedFC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCmasa;
+=======
 				DEVELOPMENT_TEAM = KE34B4UU7B;
 				INFOPLIST_FILE = TabbedFC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFC;
-=======
-				DEVELOPMENT_TEAM = 893D7556GH;
-				INFOPLIST_FILE = TabbedFC/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCnakari;
->>>>>>> profile
+>>>>>>> shoriPE
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -340,18 +343,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 <<<<<<< HEAD
+				DEVELOPMENT_TEAM = CG6F853P6N;
+				INFOPLIST_FILE = TabbedFC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCmasa;
+=======
 				DEVELOPMENT_TEAM = KE34B4UU7B;
 				INFOPLIST_FILE = TabbedFC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFC;
-=======
-				DEVELOPMENT_TEAM = 893D7556GH;
-				INFOPLIST_FILE = TabbedFC/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCnakari;
->>>>>>> profile
+>>>>>>> shoriPE
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

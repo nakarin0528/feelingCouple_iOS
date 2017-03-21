@@ -94,6 +94,10 @@
                                 <rect key="frame" x="165.5" y="557" width="43" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="decideParticipants:" destination="HVK-eT-ucQ" eventType="touchUpInside" id="qmP-Ko-YQL"/>
+                                    <segue destination="WLg-zz-tXO" kind="show" id="J1O-Gu-fzd"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mGR-Gb-v1q">
                                 <rect key="frame" x="46" y="205" width="283" height="327"/>
@@ -112,10 +116,31 @@
                             <constraint firstAttribute="trailingMargin" secondItem="mGR-Gb-v1q" secondAttribute="trailing" constant="30" id="xsr-ec-vsa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Participants" destination="mGR-Gb-v1q" id="hau-Jd-Ysg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dP-5N-aLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2503.1999999999998" y="-321.58920539730138"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bZ9-6U-XxF">
+            <objects>
+                <viewController id="WLg-zz-tXO" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZgG-UM-uYR"/>
+                        <viewControllerLayoutGuide type="bottom" id="QJd-vc-RpT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s5n-gh-zUF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V0F-kR-A0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3295" y="-321"/>
         </scene>
         <!--Profile-->
         <scene sceneID="nbT-D7-F92">
