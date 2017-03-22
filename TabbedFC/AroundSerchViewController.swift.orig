@@ -3,6 +3,7 @@
 //  smartQC
 //
 //  Created by I,N on 2017/03/03.
+//  Copyright © 2017年 れっどいんぱるす. All rights reserved.
 //
 
 import UIKit
@@ -45,7 +46,7 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-
+<<<<<<< HEAD
         if prof.name == "プロフィールを入力してください" || prof.name == "" {
             let profAlert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
             profAlert.addButton("入力画面へ") {
@@ -56,7 +57,12 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
             }
             profAlert.showEdit("プロフィール未設定", subTitle: "名前と性別を設定してください") // Edit
         }
+=======
         ble.isFirst = true
+        /*
+         プロフィール未入力時にアラートを出してプロフィール入力画面にとばす．
+         */
+>>>>>>> master
     }
     
     func update(tm: Timer) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		538D5BCDA5420CCCD44FA77F /* Pods_TabbedFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58A330CB047A49595BA0CE5D /* Pods_TabbedFC.framework */; };
 		DB08DD631E765437008DA4D1 /* BLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08DD621E765436008DA4D1 /* BLE.swift */; };
 		DB08DD651E765A5F008DA4D1 /* AroundSerchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08DD641E765A5F008DA4D1 /* AroundSerchViewController.swift */; };
 		DB08DD671E765A6F008DA4D1 /* GetPeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08DD661E765A6F008DA4D1 /* GetPeripheralDelegate.swift */; };
@@ -14,7 +15,9 @@
 		DB08DD6D1E766E50008DA4D1 /* WaitingAroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08DD6C1E766E50008DA4D1 /* WaitingAroundViewController.swift */; };
 		DB0B8E6A1E78FDE800D2DCCB /* BLEP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8E691E78FDE800D2DCCB /* BLEP.swift */; };
 		DB972FB51E705E8200883A5F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB972FB41E705E8200883A5F /* ProfileViewController.swift */; };
+		DBE270251E810D5E00C938F6 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE270241E810D5E00C938F6 /* SelectViewController.swift */; };
 		DBEA0BAB1E7D2AAB0045CA0E /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */; };
+		DE86A09E1E824E8600DADE33 /* StartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A09D1E824E8600DADE33 /* StartedViewController.swift */; };
 		DED073351E6C246D00092366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED073341E6C246D00092366 /* AppDelegate.swift */; };
 		DED073371E6C246D00092366 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED073361E6C246D00092366 /* FirstViewController.swift */; };
 		DED073391E6C246D00092366 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED073381E6C246D00092366 /* SecondViewController.swift */; };
@@ -29,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AF05E1D00CF446208EE6933 /* Pods-TabbedFC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabbedFC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TabbedFC/Pods-TabbedFC.debug.xcconfig"; sourceTree = "<group>"; };
+		58A330CB047A49595BA0CE5D /* Pods_TabbedFC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabbedFC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9EF16F735A4D26CF2B52B06 /* Pods-TabbedFC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabbedFC.release.xcconfig"; path = "Pods/Target Support Files/Pods-TabbedFC/Pods-TabbedFC.release.xcconfig"; sourceTree = "<group>"; };
 		DB08DD621E765436008DA4D1 /* BLE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLE.swift; sourceTree = "<group>"; };
 		DB08DD641E765A5F008DA4D1 /* AroundSerchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundSerchViewController.swift; sourceTree = "<group>"; };
 		DB08DD661E765A6F008DA4D1 /* GetPeripheralDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPeripheralDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +42,9 @@
 		DB08DD6C1E766E50008DA4D1 /* WaitingAroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingAroundViewController.swift; sourceTree = "<group>"; };
 		DB0B8E691E78FDE800D2DCCB /* BLEP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEP.swift; sourceTree = "<group>"; };
 		DB972FB41E705E8200883A5F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DBE270241E810D5E00C938F6 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		DE86A09D1E824E8600DADE33 /* StartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartedViewController.swift; sourceTree = "<group>"; };
 		DED073311E6C246D00092366 /* TabbedFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabbedFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED073341E6C246D00092366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DED073361E6C246D00092366 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -57,17 +65,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				538D5BCDA5420CCCD44FA77F /* Pods_TabbedFC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C96430EB0B1816164E4E158D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1AF05E1D00CF446208EE6933 /* Pods-TabbedFC.debug.xcconfig */,
+				D9EF16F735A4D26CF2B52B06 /* Pods-TabbedFC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DED073281E6C246D00092366 = {
 			isa = PBXGroup;
 			children = (
 				DED073331E6C246D00092366 /* TabbedFC */,
 				DED073321E6C246D00092366 /* Products */,
+				C96430EB0B1816164E4E158D /* Pods */,
+				E5B1F723D188C00D5F1A72BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +117,11 @@
 				DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */,
 				DB08DD661E765A6F008DA4D1 /* GetPeripheralDelegate.swift */,
 				DED0733A1E6C246D00092366 /* Main.storyboard */,
+<<<<<<< HEAD
+				DE86A09D1E824E8600DADE33 /* StartedViewController.swift */,
+=======
+				DBE270241E810D5E00C938F6 /* SelectViewController.swift */,
+>>>>>>> master
 				EDAC0FF01E77BA8D00ADADDA /* camera.png */,
 				EDAC0FF11E77BA8D00ADADDA /* library.png */,
 				DED0733D1E6C246D00092366 /* Assets.xcassets */,
@@ -106,6 +131,14 @@
 			path = TabbedFC;
 			sourceTree = "<group>";
 		};
+		E5B1F723D188C00D5F1A72BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58A330CB047A49595BA0CE5D /* Pods_TabbedFC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,9 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DED073451E6C246D00092366 /* Build configuration list for PBXNativeTarget "TabbedFC" */;
 			buildPhases = (
+				9E2F3C5D5B12D3428CB19079 /* [CP] Check Pods Manifest.lock */,
 				DED0732D1E6C246D00092366 /* Sources */,
 				DED0732E1E6C246D00092366 /* Frameworks */,
 				DED0732F1E6C246D00092366 /* Resources */,
+				016C88ACC137D20B1CB4D5BE /* [CP] Embed Pods Frameworks */,
+				1428FB87A0AA52B5B0D7AC99 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,11 +174,7 @@
 				TargetAttributes = {
 					DED073301E6C246D00092366 = {
 						CreatedOnToolsVersion = 8.2.1;
-<<<<<<< HEAD
-						DevelopmentTeam = CG6F853P6N;
-=======
 						DevelopmentTeam = KE34B4UU7B;
->>>>>>> shoriPE
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -180,6 +212,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		016C88ACC137D20B1CB4D5BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TabbedFC/Pods-TabbedFC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1428FB87A0AA52B5B0D7AC99 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TabbedFC/Pods-TabbedFC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E2F3C5D5B12D3428CB19079 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DED0732D1E6C246D00092366 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -191,10 +271,12 @@
 				DED073391E6C246D00092366 /* SecondViewController.swift in Sources */,
 				DB08DD691E7669D3008DA4D1 /* Loading.swift in Sources */,
 				DB0B8E6A1E78FDE800D2DCCB /* BLEP.swift in Sources */,
+				DE86A09E1E824E8600DADE33 /* StartedViewController.swift in Sources */,
 				ED3D20961E6E629100643353 /* Profile.swift in Sources */,
 				DED073351E6C246D00092366 /* AppDelegate.swift in Sources */,
 				ED3D20941E6E5F9700643353 /* GetProfileDeligate.swift in Sources */,
 				DB08DD671E765A6F008DA4D1 /* GetPeripheralDelegate.swift in Sources */,
+				DBE270251E810D5E00C938F6 /* SelectViewController.swift in Sources */,
 				DB972FB51E705E8200883A5F /* ProfileViewController.swift in Sources */,
 				DED073371E6C246D00092366 /* FirstViewController.swift in Sources */,
 				DB08DD651E765A5F008DA4D1 /* AroundSerchViewController.swift in Sources */,
@@ -310,6 +392,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,21 +402,15 @@
 		};
 		DED073461E6C246D00092366 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AF05E1D00CF446208EE6933 /* Pods-TabbedFC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-<<<<<<< HEAD
-				DEVELOPMENT_TEAM = CG6F853P6N;
-				INFOPLIST_FILE = TabbedFC/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCmasa;
-=======
 				DEVELOPMENT_TEAM = KE34B4UU7B;
 				INFOPLIST_FILE = TabbedFC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFC;
->>>>>>> shoriPE
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -341,21 +418,15 @@
 		};
 		DED073471E6C246D00092366 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9EF16F735A4D26CF2B52B06 /* Pods-TabbedFC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-<<<<<<< HEAD
-				DEVELOPMENT_TEAM = CG6F853P6N;
-				INFOPLIST_FILE = TabbedFC/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCmasa;
-=======
 				DEVELOPMENT_TEAM = KE34B4UU7B;
 				INFOPLIST_FILE = TabbedFC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFC;
->>>>>>> shoriPE
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

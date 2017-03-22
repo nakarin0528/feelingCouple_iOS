@@ -18,19 +18,26 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     var writeCharacteristic: CBCharacteristic!
     var manReadCharacteristic: CBCharacteristic!
     var womanReadCharacteristic: CBCharacteristic!
+//    var malesNumCharacteristic: CBCharacteristic!
+//    var femalesNumCharacteristic: CBCharacteristic!
     var myPeripheral: [CBPeripheral] = []
     var peripheralList: [String] = []
     static var flag = false
     static var isCorrectDevice = false
     static var isError = false
+    var isFirst = true
     
+    //異性の数
+    var malesNum = 0
+    var femalesNum = 0
     var willPartner: [String] = []
 
     
     let manUUID = "A001"
     let womanUUID = "A002"
     let writeUUID = "A003"
-    
+//    let malesNumUUID = "A004"
+//    let femalesNumUUID = "A005"
     
     static let sharedBle = BLE()
     var peripheralDelegate: GetPeripheralDelegate?
@@ -45,6 +52,7 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
         BLE.flag = false
         BLE.isCorrectDevice = false
         isScanning = false
+        isFirst = true
         myPeripheral.removeAll()
         if self.peripheral != nil {
 
@@ -174,19 +182,27 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
             //男のReadプロパティを持つのキャラクタリスティックの値を読み出す
             if characteristic.uuid.isEqual(CBUUID(string: manUUID)){
                 manReadCharacteristic = characteristic
-                peripheral.readValue(for: characteristic)
             }
             //女のReadプロパティを持つのキャラクタリスティックの値を読み出す
             if characteristic.uuid.isEqual(CBUUID(string: womanUUID)){
                 womanReadCharacteristic = characteristic
-                peripheral.readValue(for: characteristic)
             }
-            
+            //プロフィールを書き込めるキャラククタリスティック
             if characteristic.uuid.isEqual(CBUUID(string: writeUUID)) {
                 writeCharacteristic = characteristic
-                sendProfile()
+                if isFirst {
+                    sendProfile()
+                    isFirst = false
+                }
             }
-            
+//            //男の人数を得るキャラクタリスティック
+//            if characteristic.uuid.isEqual(CBUUID(string: malesNumUUID)){
+//                malesNumCharacteristic = characteristic
+//            }
+//            //女の人数を得るキャラクタリスティック
+//            if characteristic.uuid.isEqual(CBUUID(string: femalesNumUUID)){
+//                femalesNumCharacteristic = characteristic
+//            }
         }
             centralManager.stopScan()
 
@@ -203,13 +219,27 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
         //欲しいキャラクタリスティックかどうかを判定
         if characteristic.uuid.isEqual(CBUUID(string: manUUID)){
             let text = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue)
+            willPartner.append(text! as String)
             print(text!)
         }
         if characteristic.uuid.isEqual(CBUUID(string: womanUUID)){
             let text = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue)
+            willPartner.append(text! as String)
             print(text!)
 
         }
+//        if characteristic.uuid.isEqual(CBUUID(string: malesNumUUID)){
+//            let text = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue)
+//            willPartnerNum = Int(text as! String)!
+//            print("相手候補\(willPartner)+1人")
+//            womanRead()
+//        }
+//        if characteristic.uuid.isEqual(CBUUID(string: femalesNumUUID)){
+//            let text = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue)
+//            willPartnerNum = Int(text as! String)!
+//            print("相手候補\(willPartner)+1人")
+//            manRead()
+//        }
     }
     
     
@@ -236,39 +266,64 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
             
             try peripheral.writeValue(gentmp! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
             //一旦接続を切る
-            centralManager = CBCentralManager(delegate: self, queue: nil)
+            //centralManager = CBCentralManager(delegate: self, queue: nil)
             centralManager.stopScan()
         }catch{
             initBle()
         }
     }
+    
+//    //男の人数をゲット
+//    public func readMalesNum(){
+//        centralManager.connect(peripheral, options: nil)
+//        do{
+//            peripheral.readValue(for: malesNumCharacteristic)
+//            
+//        }catch{
+//            initBle()
+//        }
+//    }
+//    
+//    //女の人数をゲット
+//    public func readFemalesNum(){
+//        centralManager.connect(peripheral, options: nil)
+//        do{
+//            peripheral.readValue(for: femalesNumCharacteristic)
+//            
+//        }catch{
+//            initBle()
+//        }
+//    }
 
+    //男が読み取る
     public func manRead(){
         centralManager.connect(peripheral, options: nil)
-        
-        for i in 0...1 {
+
+        for i in 0...femalesNum {
             do{
                 peripheral.readValue(for: manReadCharacteristic)
-                
             }catch{
                 initBle()
             }
         }
         //一旦接続を切る
-        centralManager = CBCentralManager(delegate: self, queue: nil)
+        //centralManager = CBCentralManager(delegate: self, queue: nil)
         centralManager.stopScan()
     }
     
+    //女が読み取る
     public func womanRead(){
         centralManager.connect(peripheral, options: nil)
-        do{
-            peripheral.readValue(for: womanReadCharacteristic)
-            //一旦接続を切る
-            centralManager = CBCentralManager(delegate: self, queue: nil)
-            centralManager.stopScan()
-        }catch{
-            initBle()
+
+        for i in 0...malesNum {
+            do{
+                peripheral.readValue(for: womanReadCharacteristic)
+            }catch{
+                initBle()
+            }
         }
+        //centralManager = CBCentralManager(delegate: self, queue: nil)
+        centralManager.stopScan()
     }
     
     func differentPeripheral(){
