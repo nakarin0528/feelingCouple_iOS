@@ -81,7 +81,7 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let profView = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
                 self.present(profView, animated: true, completion: nil)
             }
-            profAlert.showEdit("プロフィール未入力", subTitle: "名前と性別を設定してください") // Edit
+            profAlert.showEdit("プロフィール未設定", subTitle: "名前と性別を設定してください") // Edit
         }
     }
     
@@ -90,11 +90,15 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
             let noParticipantsAlert = SCLAlertView()
             noParticipantsAlert.showWait("待機中", subTitle: "参加者がいません") // Wait
         } else {
-            let storyboard: UIStoryboard = self.storyboard!
-            let startedView = storyboard.instantiateViewController(withIdentifier: "started") as! StartedViewController
-            let navi = UINavigationController(rootViewController: startedView)
-            self.present(navi, animated: true, completion: nil)
-            blep.data.separateByGender()
+            let startAlert = SCLAlertView()
+            startAlert.addButton("Start") {
+                let storyboard: UIStoryboard = self.storyboard!
+                let startedView = storyboard.instantiateViewController(withIdentifier: "started") as! StartedViewController
+                let navi = UINavigationController(rootViewController: startedView)
+                self.present(navi, animated: true, completion: nil)
+                self.blep.data.separateByGender()
+            }
+            startAlert.showNotice("確認", subTitle: "開始してもよろしいですか?", closeButtonTitle: "Cancel")
         }
     }
     

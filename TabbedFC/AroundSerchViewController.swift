@@ -53,7 +53,7 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
                 let profView = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
                 self.present(profView, animated: true, completion: nil)
             }
-            profAlert.showEdit("プロフィール未入力", subTitle: "名前と性別を設定してください") // Edit
+            profAlert.showEdit("プロフィール未設定", subTitle: "名前と性別を設定してください") // Edit
         }
     }
     
@@ -122,6 +122,9 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
         if num != nil {
             ble.setNewPeripheral(num!)
             self.navigationController?.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "waiting") as! WaitingAroundViewController, animated: true)
+        } else {
+            let JoinAlert = SCLAlertView()
+            JoinAlert.showWarning("ルーム未選択", subTitle: "ルームを選択してください", closeButtonTitle: "OK") // Notice
         }
     }
     
