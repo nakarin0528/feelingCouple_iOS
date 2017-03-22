@@ -57,7 +57,12 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
             }
             profAlert.showEdit("プロフィール未設定", subTitle: "名前と性別を設定してください") // Edit
         }
+=======
         ble.isFirst = true
+        /*
+         プロフィール未入力時にアラートを出してプロフィール入力画面にとばす．
+         */
+>>>>>>> 570a6c898ece1022332c4f09def59d40a2aeeec6
     }
     
     func update(tm: Timer) {

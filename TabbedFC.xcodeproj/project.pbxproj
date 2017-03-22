@@ -15,6 +15,7 @@
 		DB08DD6D1E766E50008DA4D1 /* WaitingAroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08DD6C1E766E50008DA4D1 /* WaitingAroundViewController.swift */; };
 		DB0B8E6A1E78FDE800D2DCCB /* BLEP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8E691E78FDE800D2DCCB /* BLEP.swift */; };
 		DB972FB51E705E8200883A5F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB972FB41E705E8200883A5F /* ProfileViewController.swift */; };
+		DBE270251E810D5E00C938F6 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE270241E810D5E00C938F6 /* SelectViewController.swift */; };
 		DBEA0BAB1E7D2AAB0045CA0E /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */; };
 		DE86A09E1E824E8600DADE33 /* StartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A09D1E824E8600DADE33 /* StartedViewController.swift */; };
 		DED073351E6C246D00092366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED073341E6C246D00092366 /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 		DB08DD6C1E766E50008DA4D1 /* WaitingAroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingAroundViewController.swift; sourceTree = "<group>"; };
 		DB0B8E691E78FDE800D2DCCB /* BLEP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEP.swift; sourceTree = "<group>"; };
 		DB972FB41E705E8200883A5F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DBE270241E810D5E00C938F6 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		DE86A09D1E824E8600DADE33 /* StartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartedViewController.swift; sourceTree = "<group>"; };
 		DED073311E6C246D00092366 /* TabbedFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabbedFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,7 @@
 				DB08DD661E765A6F008DA4D1 /* GetPeripheralDelegate.swift */,
 				DED0733A1E6C246D00092366 /* Main.storyboard */,
 				DE86A09D1E824E8600DADE33 /* StartedViewController.swift */,
+				DBE270241E810D5E00C938F6 /* SelectViewController.swift */,
 				EDAC0FF01E77BA8D00ADADDA /* camera.png */,
 				EDAC0FF11E77BA8D00ADADDA /* library.png */,
 				DED0733D1E6C246D00092366 /* Assets.xcassets */,
@@ -270,6 +273,7 @@
 				DED073351E6C246D00092366 /* AppDelegate.swift in Sources */,
 				ED3D20941E6E5F9700643353 /* GetProfileDeligate.swift in Sources */,
 				DB08DD671E765A6F008DA4D1 /* GetPeripheralDelegate.swift in Sources */,
+				DBE270251E810D5E00C938F6 /* SelectViewController.swift in Sources */,
 				DB972FB51E705E8200883A5F /* ProfileViewController.swift in Sources */,
 				DED073371E6C246D00092366 /* FirstViewController.swift in Sources */,
 				DB08DD651E765A5F008DA4D1 /* AroundSerchViewController.swift in Sources */,

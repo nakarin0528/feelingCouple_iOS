@@ -10,17 +10,20 @@ import Foundation
 
 class OrganizingData: NSObject{
     
+    var myprofile = Profile.sharedProfile
+    
+    var participants = [[String]]()
+    var males: [String] = []
+    var females: [String] = []
+    
     static let sharedData = OrganizingData()
+    
     
     private override init(){
         super.init()
     }
     
-    var participants = [[Any]]()
-    var males = [[Any]]()
-    var females = [[Any]]()
-    
-    func setPersonalData(value: [Any]) {
+    func setPersonalData(value: [String]) {
 
         participants.append(value)
         print("受けとったデータ")
@@ -28,11 +31,18 @@ class OrganizingData: NSObject{
     }
 
     func separateByGender() {
+        //まず自分のデータを追加
+        if myprofile.gender == "0" {
+            males.append(myprofile.name)
+        } else {
+            females.append(myprofile.name)
+        }
+        //取得したリストを男女別に仕分け
         for i in 0..<participants.count {
-            if (participants[i][1] as! String) == "0" {
-                males.append(participants[i])
+            if (participants[i][1] ) == "0" {
+                males.append(participants[i][0])
             } else {
-                females.append(participants[i])
+                females.append(participants[i][0])
             }
         }
         print("男性"+"\(males)")

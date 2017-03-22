@@ -20,8 +20,13 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     var manCharacteristic: CBMutableCharacteristic!
     var womanCharacteristic: CBMutableCharacteristic!
     var writeCharacteristic: CBMutableCharacteristic!
-    var personal: [Any] = []
+//    var malesNumCharacteristic: CBMutableCharacteristic!
+//    var femalesNumCharacteristic: CBMutableCharacteristic!
+    var personal: [String] = []
     var names: [String] = []
+    
+    var malesCount = 0
+    var femalesCount = 0
     //受け取り回数
     var count = 0
     
@@ -53,15 +58,20 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         let manUUID = CBUUID(string: "A001")
         let womanUUID = CBUUID(string: "A002")
         let writeUUID = CBUUID(string: "A003")
+//        let malesNumUUID = CBUUID(string: "A004")
+//        let femalesNumUUID = CBUUID(string: "A005")
         
         let manReadProperties: CBCharacteristicProperties = [.read]
         let womanReadProperties: CBCharacteristicProperties = [.read]
         let writeProperties: CBCharacteristicProperties = [.write]
+//        let malesNumProperties: CBCharacteristicProperties = [.read]
+//        let femalesNumProperties: CBCharacteristicProperties = [.read]
         
         let manReadPermissions: CBAttributePermissions = [.readable]
         let womanReadPermissions: CBAttributePermissions = [.readable]
         let writePermissions: CBAttributePermissions = [.writeable]
-
+//        let malesNumPermissions: CBAttributePermissions = [.readable]
+//        let femalesNumPermissions: CBAttributePermissions = [.readable]
         
         manCharacteristic = CBMutableCharacteristic(
             type: manUUID,
@@ -81,16 +91,24 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
             value: nil,
             permissions: writePermissions)
         
+//        malesNumCharacteristic = CBMutableCharacteristic(
+//            type: malesNumUUID,
+//            properties: malesNumProperties,
+//            value: nil,
+//            permissions: malesNumPermissions)
+//        
+//        femalesNumCharacteristic = CBMutableCharacteristic(
+//            type: femalesNumUUID,
+//            properties: femalesNumProperties,
+//            value: nil,
+//            permissions: femalesNumPermissions)
+        
         // キャラクタリスティックをサービスにセット
         service.characteristics = [manCharacteristic, womanCharacteristic, writeCharacteristic]
+//        , malesNumCharacteristic, femalesNumCharacteristic]
         
         // サービスを Peripheral Manager にセット
         peripheralManager.add(service)
-        
-        // 値をセット
-        let value = UInt8(arc4random() & 0xFF)
-        let data = Data(bytes: UnsafePointer<UInt8>([value]), count: 1)
-        manCharacteristic.value = data;
 
     }
     
@@ -151,20 +169,54 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
         print("Readリクエスト受信！ requested service uuid:\(request.characteristic.service.uuid) characteristic uuid:\(request.characteristic.uuid) value:\(request.characteristic.value)")
         
-        // プロパティで保持しているキャラクタリスティックへのReadリクエストかどうかを判定
+//        //女に男の人数を送る
+//        if request.characteristic.uuid.isEqual(malesNumCharacteristic.uuid){
+//            let num = String(data.males.count-1)
+//            let value = num.data(using:String.Encoding.utf8)
+//            malesNumCharacteristic.value = value
+//            request.value = malesNumCharacteristic.value
+//        }
+//        
+//        //男に女の人数を送る
+//        if request.characteristic.uuid.isEqual(femalesNumCharacteristic.uuid){
+//            let num = String(data.males.count-1)
+//            let value = num.data(using:String.Encoding.utf8)
+//            femalesNumCharacteristic.value = value
+//            request.value = femalesNumCharacteristic.value
+//        }
+        
+        // 男に送信
         if request.characteristic.uuid.isEqual(manCharacteristic.uuid) {
             
-            // CBMutableCharacteristicのvalueをCBATTRequestのvalueにセット
-            request.value = manCharacteristic.value;
+            
+            // 値をセット
+            let value = data.females[femalesCount].data(using:String.Encoding.utf8)
+            manCharacteristic.value = value
+            request.value = manCharacteristic.value
+            
+            if femalesCount == data.females.count-1{
+                femalesCount = 0
+            } else {
+                femalesCount = femalesCount + 1
+            }
             
             // リクエストに応答
             peripheralManager.respond(to: request, withResult: CBATTError.Code.success)
         }
-        // プロパティで保持しているキャラクタリスティックへのReadリクエストかどうかを判定
+        
+        // 女に送信
         if request.characteristic.uuid.isEqual(womanCharacteristic.uuid) {
             
-            // CBMutableCharacteristicのvalueをCBATTRequestのvalueにセット
-            request.value = womanCharacteristic.value;
+            // 値をセット
+            let value = data.males[malesCount].data(using:String.Encoding.utf8)
+            womanCharacteristic.value = value
+            request.value = womanCharacteristic.value
+            
+            if malesCount == data.males.count-1{
+                malesCount = 0
+            } else {
+                malesCount = malesCount + 1
+            }
             
             // リクエストに応答
             peripheralManager.respond(to: request, withResult: CBATTError.Code.success)
@@ -185,7 +237,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
                 
                 let text = NSString(data: request.value!, encoding: String.Encoding.utf8.rawValue)
                 print(text!)
-                personal.append(text!)
+                personal.append(text! as String)
                 
                 if count <= 1 {
                     if count == 1 {
@@ -202,6 +254,10 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         }
         // リクエストに応答
         peripheralManager.respond(to: requests[0] , withResult: CBATTError.Code.success)
+    }
+    
+    func sendMan(){
+        
     }
     
     func advertise() {
