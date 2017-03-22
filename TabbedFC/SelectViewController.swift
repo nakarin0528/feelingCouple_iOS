@@ -1,48 +1,53 @@
 //
-//  RoomViewController.swift
+//  SelectViewController.swift
 //  TabbedFC
 //
-//  Created by I,N on 2017/03/18.
+//  Created by I,N on 2017/03/21.
 //  Copyright © 2017年 feelingCouplePBL. All rights reserved.
 //
 
 import UIKit
 
-class RoomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
-    var blep = BLEP.sharedBleP
+    var ble = BLE.sharedBle
     var timer: Timer!
     private var myItems: [String] = []
-    @IBOutlet weak var participants: UITableView!
+    @IBOutlet weak var willPartnersList: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //Cell名の登録
-        participants.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
+        willPartnersList.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
         
         //DataSourceを自身に設定
-        participants.dataSource = self
+        willPartnersList.dataSource = self
         
         //Delegateを自身に設定
-        participants.delegate = self
+        willPartnersList.delegate = self
         
         //Cellの選択を不可に設定
-        participants.allowsSelection = false
+        willPartnersList.allowsSelection = false
         
         //Viewに追加する
-        self.view.addSubview(participants)
+        self.view.addSubview(willPartnersList)
 
+        
         timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         timer.fire()
     }
     
     func update(tm: Timer){
-        //接続されたセントラルの名前をテーブルに追加
-        myItems = blep.names
         //テーブルビュー更新
-        participants.reloadData()
+        myItems = ble.willPartner
+        willPartnersList.reloadData()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     //Cellの総数を返す
@@ -57,32 +62,9 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         // セルが選択された時の背景色を消す
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         // Cellに値を設定する.
-        //print(myItems)
         cell.textLabel!.text = "\(myItems[indexPath.row])"
-
+        
         return cell
     }
-    //画面切り替わった時にタイマーを止める
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        timer.invalidate()
-    }
-
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        /*
-         プロフィール未入力時にアラートを出してプロフィール入力画面にとばす．
-         */
-    }
-    
-    @IBAction func decideParticipants(_ sender: Any) {
-        blep.data.separateByGender()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
+

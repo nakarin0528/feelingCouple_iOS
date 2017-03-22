@@ -22,6 +22,7 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Cell名の登録をおこなう.
         myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
         
@@ -43,6 +44,7 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        ble.isFirst = true
         /*
          プロフィール未入力時にアラートを出してプロフィール入力画面にとばす．
          */
