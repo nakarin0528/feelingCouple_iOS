@@ -72,17 +72,6 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        //プロフィール未設定の場合にアラートを表示し、入力画面に遷移させる
-        if prof.name == "プロフィールを入力してください" || prof.name == "" {
-            let profAlert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-            profAlert.addButton("入力画面へ") {
-                //ここに画面遷移を実装
-                let storyboard: UIStoryboard = self.storyboard!
-                let profView = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
-                self.present(profView, animated: true, completion: nil)
-            }
-            profAlert.showEdit("プロフィール未設定", subTitle: "名前と性別を設定してください") // Edit
-        }
     }
     
     @IBAction func decideParticipants(_ sender: Any) {
