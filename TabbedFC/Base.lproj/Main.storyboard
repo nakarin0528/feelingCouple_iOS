@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -96,7 +96,6 @@
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="decideParticipants:" destination="HVK-eT-ucQ" eventType="touchUpInside" id="qmP-Ko-YQL"/>
-                                    <segue destination="WLg-zz-tXO" kind="show" id="J1O-Gu-fzd"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mGR-Gb-v1q">
@@ -124,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="2503.1999999999998" y="-321.58920539730138"/>
         </scene>
-        <!--View Controller-->
+        <!--Started View Controller-->
         <scene sceneID="bZ9-6U-XxF">
             <objects>
-                <viewController id="WLg-zz-tXO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="started" id="WLg-zz-tXO" customClass="StartedViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZgG-UM-uYR"/>
                         <viewControllerLayoutGuide type="bottom" id="QJd-vc-RpT"/>
@@ -145,7 +144,7 @@
         <!--Profile-->
         <scene sceneID="nbT-D7-F92">
             <objects>
-                <viewController id="hQI-sA-4Jj" customClass="ProfileViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profile" id="hQI-sA-4Jj" customClass="ProfileViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pD5-si-ap4"/>
                         <viewControllerLayoutGuide type="bottom" id="yQO-Ea-ucm"/>

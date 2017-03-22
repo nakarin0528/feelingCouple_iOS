@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GetPeripheralDelegate {
 
     var ble = BLE.sharedBle
+    var prof = Profile.sharedProfile
     var timer: Timer!
     var num: Int?
     var lastCell: UITableViewCell?
@@ -43,9 +45,16 @@ class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        /*
-         プロフィール未入力時にアラートを出してプロフィール入力画面にとばす．
-         */
+        if prof.name == "プロフィールを入力してください" || prof.name == "" {
+            let profAlert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+            profAlert.addButton("入力画面へ") {
+                //ここに画面遷移を実装
+                let storyboard: UIStoryboard = self.storyboard!
+                let profView = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
+                self.present(profView, animated: true, completion: nil)
+            }
+            profAlert.showEdit("プロフィール未入力", subTitle: "名前と性別を設定してください") // Edit
+        }
     }
     
     func update(tm: Timer) {

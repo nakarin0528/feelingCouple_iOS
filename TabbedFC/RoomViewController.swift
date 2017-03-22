@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class RoomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
     var blep = BLEP.sharedBleP
+    var prof = Profile.sharedProfile
     var timer: Timer!
     private var myItems: [String] = []
     @IBOutlet weak var participants: UITableView!
@@ -71,13 +72,30 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        /*
-         プロフィール未入力時にアラートを出してプロフィール入力画面にとばす．
-         */
+        //プロフィール未設定の場合にアラートを表示し、入力画面に遷移させる
+        if prof.name == "プロフィールを入力してください" || prof.name == "" {
+            let profAlert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+            profAlert.addButton("入力画面へ") {
+                //ここに画面遷移を実装
+                let storyboard: UIStoryboard = self.storyboard!
+                let profView = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
+                self.present(profView, animated: true, completion: nil)
+            }
+            profAlert.showEdit("プロフィール未入力", subTitle: "名前と性別を設定してください") // Edit
+        }
     }
     
     @IBAction func decideParticipants(_ sender: Any) {
-        blep.data.separateByGender()
+        if myItems == [] {
+            let noParticipantsAlert = SCLAlertView()
+            noParticipantsAlert.showWait("待機中", subTitle: "参加者がいません") // Wait
+        } else {
+            let storyboard: UIStoryboard = self.storyboard!
+            let startedView = storyboard.instantiateViewController(withIdentifier: "started") as! StartedViewController
+            let navi = UINavigationController(rootViewController: startedView)
+            self.present(navi, animated: true, completion: nil)
+            blep.data.separateByGender()
+        }
     }
     
     override func didReceiveMemoryWarning() {

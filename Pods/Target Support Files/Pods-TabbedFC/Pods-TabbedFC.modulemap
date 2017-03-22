@@ -1,0 +1,6 @@
+framework module Pods_TabbedFC {
+  umbrella header "Pods-TabbedFC-umbrella.h"
+
+  export *
+  module * { export * }
+}
