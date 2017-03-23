@@ -29,6 +29,7 @@
 		ED3D20961E6E629100643353 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D20951E6E629100643353 /* Profile.swift */; };
 		EDAC0FF21E77BA8D00ADADDA /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = EDAC0FF01E77BA8D00ADADDA /* camera.png */; };
 		EDAC0FF31E77BA8D00ADADDA /* library.png in Resources */ = {isa = PBXBuildFile; fileRef = EDAC0FF11E77BA8D00ADADDA /* library.png */; };
+		EDAC0FF91E831FC500ADADDA /* PartisipantsNoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAC0FF81E831FC500ADADDA /* PartisipantsNoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		ED3D20951E6E629100643353 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		EDAC0FF01E77BA8D00ADADDA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		EDAC0FF11E77BA8D00ADADDA /* library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = library.png; sourceTree = "<group>"; };
+		EDAC0FF81E831FC500ADADDA /* PartisipantsNoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartisipantsNoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +109,13 @@
 				DB08DD681E7669D3008DA4D1 /* Loading.swift */,
 				DB08DD6C1E766E50008DA4D1 /* WaitingAroundViewController.swift */,
 				DED073381E6C246D00092366 /* SecondViewController.swift */,
+				ED3D20951E6E629100643353 /* Profile.swift */,
 				DB972FB41E705E8200883A5F /* ProfileViewController.swift */,
+				EDAC0FF81E831FC500ADADDA /* PartisipantsNoViewController.swift */,
 				DB08DD621E765436008DA4D1 /* BLE.swift */,
 				DB0B8E691E78FDE800D2DCCB /* BLEP.swift */,
 				DEE86D1C1E7F66C5005985E9 /* OrganizingData.swift */,
 				ED3D20931E6E5F9700643353 /* GetProfileDeligate.swift */,
-				ED3D20951E6E629100643353 /* Profile.swift */,
 				DB08DD641E765A5F008DA4D1 /* AroundSerchViewController.swift */,
 				DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */,
 				DB08DD661E765A6F008DA4D1 /* GetPeripheralDelegate.swift */,
@@ -171,7 +174,7 @@
 				TargetAttributes = {
 					DED073301E6C246D00092366 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = KE34B4UU7B;
+						DevelopmentTeam = 893D7556GH;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -273,7 +276,11 @@
 				DED073351E6C246D00092366 /* AppDelegate.swift in Sources */,
 				ED3D20941E6E5F9700643353 /* GetProfileDeligate.swift in Sources */,
 				DB08DD671E765A6F008DA4D1 /* GetPeripheralDelegate.swift in Sources */,
+<<<<<<< HEAD
 				DBE270251E810D5E00C938F6 /* SelectViewController.swift in Sources */,
+=======
+				EDAC0FF91E831FC500ADADDA /* PartisipantsNoViewController.swift in Sources */,
+>>>>>>> picker
 				DB972FB51E705E8200883A5F /* ProfileViewController.swift in Sources */,
 				DED073371E6C246D00092366 /* FirstViewController.swift in Sources */,
 				DB08DD651E765A5F008DA4D1 /* AroundSerchViewController.swift in Sources */,
@@ -404,10 +411,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = KE34B4UU7B;
+				DEVELOPMENT_TEAM = 893D7556GH;
 				INFOPLIST_FILE = TabbedFC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCnakari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -420,10 +427,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = KE34B4UU7B;
+				DEVELOPMENT_TEAM = 893D7556GH;
 				INFOPLIST_FILE = TabbedFC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCnakari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

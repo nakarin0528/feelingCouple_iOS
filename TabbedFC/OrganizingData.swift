@@ -48,4 +48,8 @@ class OrganizingData: NSObject{
         print("男性"+"\(males)")
         print("女性"+"\(females)")
     }
+    
+//    func matching(targetData: [[String]]){       ここに関数
+//        for i in 0...targetData.count
+//    }
 }

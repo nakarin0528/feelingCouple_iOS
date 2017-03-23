@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-=======
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
->>>>>>> shoriPE
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -37,7 +33,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Make Room"/>
                                 <connections>
-                                    <segue destination="HVK-eT-ucQ" kind="show" id="fdR-KE-bmH"/>
+<<<<<<< HEAD
+                                    <action selector="makeRoom:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ubb-cJ-YH3"/>
+=======
+                                    <segue destination="LbL-b7-NdD" kind="show" id="Gmk-Al-KuO"/>
+>>>>>>> picker
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xc2-JU-WtP">
@@ -45,7 +45,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Join Room"/>
                                 <connections>
-                                    <segue destination="TG5-CB-qNd" kind="show" id="fwt-i7-xDd"/>
+                                    <action selector="joinRoom:" destination="9pv-A4-QxB" eventType="touchUpInside" id="RhK-hK-ots"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcx-qu-0zr">
@@ -76,6 +76,61 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="-320.68965517241384"/>
         </scene>
+        <!--Partisipants No View Controller-->
+        <scene sceneID="bzM-Vh-IXU">
+            <objects>
+                <viewController id="LbL-b7-NdD" customClass="PartisipantsNoViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JIt-P9-gP4"/>
+                        <viewControllerLayoutGuide type="bottom" id="j6b-Kk-C3h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B8C-NT-SaO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxC-RF-vwd">
+                                <rect key="frame" x="28" y="225" width="320" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eq3-4O-XNU">
+                                <rect key="frame" x="172" y="491" width="31" height="30"/>
+                                <state key="normal" title="決定"/>
+                                <connections>
+                                    <segue destination="HVK-eT-ucQ" kind="show" id="Uey-e5-85E"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="男性の参加人数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0G-ox-DBG">
+                                <rect key="frame" x="66" y="194" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="女性の参加人数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZw-GR-6VU">
+                                <rect key="frame" x="203" y="194" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f0G-ox-DBG" firstAttribute="leading" secondItem="B8C-NT-SaO" secondAttribute="leadingMargin" constant="50" id="9wJ-rN-znh"/>
+                            <constraint firstItem="zxC-RF-vwd" firstAttribute="top" secondItem="SZw-GR-6VU" secondAttribute="bottom" constant="10" id="Fhk-1P-MHN"/>
+                            <constraint firstAttribute="trailing" secondItem="SZw-GR-6VU" secondAttribute="trailing" constant="50" id="FrE-5n-vq0"/>
+                            <constraint firstItem="zxC-RF-vwd" firstAttribute="top" secondItem="f0G-ox-DBG" secondAttribute="bottom" constant="10" id="QUX-CO-z1c"/>
+                            <constraint firstItem="zxC-RF-vwd" firstAttribute="centerX" secondItem="B8C-NT-SaO" secondAttribute="centerX" id="RC8-8a-3FW"/>
+                            <constraint firstItem="Eq3-4O-XNU" firstAttribute="top" secondItem="zxC-RF-vwd" secondAttribute="bottom" constant="50" id="V8f-O4-PwG"/>
+                            <constraint firstItem="Eq3-4O-XNU" firstAttribute="centerX" secondItem="B8C-NT-SaO" secondAttribute="centerX" id="ZcI-pd-XVJ"/>
+                            <constraint firstItem="zxC-RF-vwd" firstAttribute="centerY" secondItem="B8C-NT-SaO" secondAttribute="centerY" id="rtC-Ti-ISJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="partisipantsNo" destination="zxC-RF-vwd" id="CUq-JO-cd9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i77-AU-87e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2533.5999999999999" y="-321.58920539730138"/>
+        </scene>
         <!--Room View Controller-->
         <scene sceneID="dD8-tt-LOX">
             <objects>
@@ -100,7 +155,6 @@
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="decideParticipants:" destination="HVK-eT-ucQ" eventType="touchUpInside" id="qmP-Ko-YQL"/>
-                                    <segue destination="WLg-zz-tXO" kind="show" id="J1O-Gu-fzd"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mGR-Gb-v1q">
@@ -121,17 +175,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="Participants" destination="mGR-Gb-v1q" id="hau-Jd-Ysg"/>
+                        <outlet property="participants" destination="mGR-Gb-v1q" id="Sll-Dt-x66"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dP-5N-aLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503.1999999999998" y="-321.58920539730138"/>
+            <point key="canvasLocation" x="3350" y="-325"/>
         </scene>
-        <!--View Controller-->
+        <!--Started View Controller-->
         <scene sceneID="bZ9-6U-XxF">
             <objects>
-                <viewController id="WLg-zz-tXO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="started" id="WLg-zz-tXO" customClass="StartedViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZgG-UM-uYR"/>
                         <viewControllerLayoutGuide type="bottom" id="QJd-vc-RpT"/>
@@ -149,7 +203,7 @@
         <!--Profile-->
         <scene sceneID="nbT-D7-F92">
             <objects>
-                <viewController id="hQI-sA-4Jj" customClass="ProfileViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profile" id="hQI-sA-4Jj" customClass="ProfileViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pD5-si-ap4"/>
                         <viewControllerLayoutGuide type="bottom" id="yQO-Ea-ucm"/>
@@ -164,7 +218,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名前を入力してください。" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TJr-TF-pNS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名前を入力してください。" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="TJr-TF-pNS">
                                 <rect key="frame" x="66" y="260" width="243" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -211,11 +265,11 @@
                                     <action selector="camera:" destination="hQI-sA-4Jj" eventType="touchUpInside" id="gH0-Ou-qbU"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bHy-Fh-qqz">
-                                <rect key="frame" x="118" y="110" width="140" height="140"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHy-Fh-qqz">
+                                <rect key="frame" x="136" y="110" width="105" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="JFW-mD-Yv3"/>
-                                    <constraint firstAttribute="width" constant="140" id="NNs-Ze-pVy"/>
+                                    <constraint firstAttribute="width" constant="105" id="xcK-wW-8kH"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -285,7 +339,7 @@
         <!--Around Serch View Controller-->
         <scene sceneID="f7V-sO-tFl">
             <objects>
-                <viewController id="TG5-CB-qNd" customClass="AroundSerchViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="asearch" id="TG5-CB-qNd" customClass="AroundSerchViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FAS-ub-qXu"/>
                         <viewControllerLayoutGuide type="bottom" id="clX-Jw-WlT"/>
@@ -295,17 +349,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEv-jM-fSv">
-                                <rect key="frame" x="121.5" y="144" width="132.5" height="36"/>
+                                <rect key="frame" x="121.5" y="100" width="132.5" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EOp-fy-a7E">
-                                <rect key="frame" x="46" y="205" width="283" height="327"/>
+                                <rect key="frame" x="46" y="161" width="283" height="420"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySh-Pd-dIp">
-                                <rect key="frame" x="168" y="557" width="38" height="36"/>
+                                <rect key="frame" x="168" y="606" width="38" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Join"/>
                                 <connections>
@@ -374,10 +428,10 @@
             </objects>
             <point key="canvasLocation" x="2490" y="358"/>
         </scene>
-        <!--View Controller-->
+        <!--Select View Controller-->
         <scene sceneID="NDy-lt-vaN">
             <objects>
-                <viewController id="JJI-je-eGy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selectß" id="JJI-je-eGy" customClass="SelectViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GSt-3e-IJs"/>
                         <viewControllerLayoutGuide type="bottom" id="vMr-3l-NSj"/>
@@ -385,12 +439,50 @@
                     <view key="view" contentMode="scaleToFill" id="T6C-Ak-n7h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gys-ad-EMu">
+                                <rect key="frame" x="46" y="161" width="283" height="420"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="81S-rK-bQc">
+                                <rect key="frame" x="51" y="100" width="273" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="気になる相手を選択" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oq6-hq-YPX">
+                                        <rect key="frame" x="0.0" y="0.0" width="273" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFg-wC-WiD">
+                                <rect key="frame" x="155" y="606" width="64" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Decide"/>
+                                <connections>
+                                    <action selector="decideButton:" destination="JJI-je-eGy" eventType="touchUpInside" id="byw-u6-fbA"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cFg-wC-WiD" firstAttribute="centerX" secondItem="T6C-Ak-n7h" secondAttribute="centerX" id="0hO-Pb-7LJ"/>
+                            <constraint firstItem="vMr-3l-NSj" firstAttribute="top" secondItem="cFg-wC-WiD" secondAttribute="bottom" constant="25" id="4uZ-y4-ve8"/>
+                            <constraint firstItem="Gys-ad-EMu" firstAttribute="top" secondItem="81S-rK-bQc" secondAttribute="bottom" constant="25" id="7tv-uo-omN"/>
+                            <constraint firstItem="81S-rK-bQc" firstAttribute="top" secondItem="GSt-3e-IJs" secondAttribute="bottom" constant="80" id="8wK-4W-ubo"/>
+                            <constraint firstItem="81S-rK-bQc" firstAttribute="centerX" secondItem="T6C-Ak-n7h" secondAttribute="centerX" id="DHs-BL-HTy"/>
+                            <constraint firstItem="cFg-wC-WiD" firstAttribute="top" secondItem="Gys-ad-EMu" secondAttribute="bottom" constant="25" id="X1S-LY-L9D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gys-ad-EMu" secondAttribute="trailing" constant="30" id="pwq-fv-yKJ"/>
+                            <constraint firstItem="Gys-ad-EMu" firstAttribute="leading" secondItem="T6C-Ak-n7h" secondAttribute="leadingMargin" constant="30" id="tly-H6-cq0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="willPartnersList" destination="Gys-ad-EMu" id="uVF-Rh-sti"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izS-Hs-thr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3242" y="360"/>
+            <point key="canvasLocation" x="3240.8000000000002" y="359.37031484257875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
