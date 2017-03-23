@@ -8,7 +8,7 @@
 import UIKit
 import SCLAlertView
 
-class AroundSerchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, GetPeripheralDelegate {
+class AroundSerchViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, GetPeripheralDelegate {
 
     var ble = BLE.sharedBle
     var prof = Profile.sharedProfile

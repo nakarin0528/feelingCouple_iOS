@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WaitingAroundViewController: UIViewController {
+class WaitingAroundViewController: BaseViewController {
 
     var ble = BLE.sharedBle
     var profile = Profile.sharedProfile

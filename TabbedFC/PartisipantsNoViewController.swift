@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PartisipantsNoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class PartisipantsNoViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var partisipantsNo: UIPickerView!
     

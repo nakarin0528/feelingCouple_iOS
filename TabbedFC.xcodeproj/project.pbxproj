@@ -14,7 +14,9 @@
 		DB08DD691E7669D3008DA4D1 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08DD681E7669D3008DA4D1 /* Loading.swift */; };
 		DB08DD6D1E766E50008DA4D1 /* WaitingAroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08DD6C1E766E50008DA4D1 /* WaitingAroundViewController.swift */; };
 		DB0B8E6A1E78FDE800D2DCCB /* BLEP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8E691E78FDE800D2DCCB /* BLEP.swift */; };
+		DB5A9EA71E84024400772919 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5A9EA61E84024400772919 /* BaseViewController.swift */; };
 		DB972FB51E705E8200883A5F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB972FB41E705E8200883A5F /* ProfileViewController.swift */; };
+		DBDC85C41E84072E0066E446 /* smallHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDC85C31E84072E0066E446 /* smallHeart.png */; };
 		DBE270251E810D5E00C938F6 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE270241E810D5E00C938F6 /* SelectViewController.swift */; };
 		DBEA0BAB1E7D2AAB0045CA0E /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */; };
 		DE86A09E1E824E8600DADE33 /* StartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A09D1E824E8600DADE33 /* StartedViewController.swift */; };
@@ -43,7 +45,9 @@
 		DB08DD681E7669D3008DA4D1 /* Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		DB08DD6C1E766E50008DA4D1 /* WaitingAroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingAroundViewController.swift; sourceTree = "<group>"; };
 		DB0B8E691E78FDE800D2DCCB /* BLEP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEP.swift; sourceTree = "<group>"; };
+		DB5A9EA61E84024400772919 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DB972FB41E705E8200883A5F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DBDC85C31E84072E0066E446 /* smallHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallHeart.png; sourceTree = "<group>"; };
 		DBE270241E810D5E00C938F6 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		DE86A09D1E824E8600DADE33 /* StartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartedViewController.swift; sourceTree = "<group>"; };
@@ -123,10 +127,12 @@
 				DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */,
 				DB08DD661E765A6F008DA4D1 /* GetPeripheralDelegate.swift */,
 				DED0733A1E6C246D00092366 /* Main.storyboard */,
+				DB5A9EA61E84024400772919 /* BaseViewController.swift */,
 				DE86A09D1E824E8600DADE33 /* StartedViewController.swift */,
 				DBE270241E810D5E00C938F6 /* SelectViewController.swift */,
 				EDAC0FF01E77BA8D00ADADDA /* camera.png */,
 				EDAC0FF11E77BA8D00ADADDA /* library.png */,
+				DBDC85C31E84072E0066E446 /* smallHeart.png */,
 				DED0733D1E6C246D00092366 /* Assets.xcassets */,
 				DED0733F1E6C246D00092366 /* LaunchScreen.storyboard */,
 				DED073421E6C246D00092366 /* Info.plist */,
@@ -177,7 +183,7 @@
 				TargetAttributes = {
 					DED073301E6C246D00092366 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = KE34B4UU7B;
+						DevelopmentTeam = 893D7556GH;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -207,6 +213,7 @@
 			files = (
 				EDAC0FF31E77BA8D00ADADDA /* library.png in Resources */,
 				DED073411E6C246D00092366 /* LaunchScreen.storyboard in Resources */,
+				DBDC85C41E84072E0066E446 /* smallHeart.png in Resources */,
 				DED0733E1E6C246D00092366 /* Assets.xcassets in Resources */,
 				EDAC0FF21E77BA8D00ADADDA /* camera.png in Resources */,
 				DED0733C1E6C246D00092366 /* Main.storyboard in Resources */,
@@ -272,6 +279,7 @@
 				DB08DD631E765437008DA4D1 /* BLE.swift in Sources */,
 				DBEA0BAB1E7D2AAB0045CA0E /* RoomViewController.swift in Sources */,
 				DED073391E6C246D00092366 /* SecondViewController.swift in Sources */,
+				DB5A9EA71E84024400772919 /* BaseViewController.swift in Sources */,
 				DB08DD691E7669D3008DA4D1 /* Loading.swift in Sources */,
 				DB0B8E6A1E78FDE800D2DCCB /* BLEP.swift in Sources */,
 				DE86A09E1E824E8600DADE33 /* StartedViewController.swift in Sources */,
@@ -412,10 +420,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = KE34B4UU7B;
+				DEVELOPMENT_TEAM = 893D7556GH;
 				INFOPLIST_FILE = TabbedFC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCnakari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -428,10 +436,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = KE34B4UU7B;
+				DEVELOPMENT_TEAM = 893D7556GH;
 				INFOPLIST_FILE = TabbedFC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCnakari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

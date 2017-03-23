@@ -32,9 +32,7 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     var malesNum = 0
     var femalesNum = 0
     var willPartner: [String] = []
-    //選んだ異性
-    var num: Int? //初期はnil
-
+    var selectedNum = 0
     
     let manUUID = "A001"
     let womanUUID = "A002"
@@ -335,15 +333,12 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     }
     
     //相手をセレクト
-    public func sendSelectData(x: Int){
+    public func sendSelectData(){
         centralManager.connect(peripheral, options: nil)
         
         let namtmp = Profile.sharedProfile.name.data(using:String.Encoding.utf8)
         let gentmp = Profile.sharedProfile.gender.data(using:String.Encoding.utf8)
-        num = x
-        let A = num!.description
-        let selectedNum = A.data(using: String.Encoding.utf8)
-        
+        let num = String(selectedNum).data(using: String.Encoding.utf8)
         if self.peripheral.state.rawValue == 0 {
             initBle()
         }
@@ -353,7 +348,7 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
             
             try peripheral.writeValue(gentmp! as Data, for: selectDataCharacteristic, type: CBCharacteristicWriteType.withResponse)
             
-            try peripheral.writeValue(selectedNum! as Data, for: selectDataCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            try peripheral.writeValue(num! as Data, for: selectDataCharacteristic, type: CBCharacteristicWriteType.withResponse)
             //一旦接続を切る
             //centralManager = CBCentralManager(delegate: self, queue: nil)
             centralManager.stopScan()

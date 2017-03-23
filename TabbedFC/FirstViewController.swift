@@ -9,7 +9,7 @@
 import UIKit
 import SCLAlertView
 
-class FirstViewController: UIViewController, GetProfileDeligate {
+class FirstViewController: BaseViewController, GetProfileDeligate {
     var profile = Profile.sharedProfile
     
     @IBOutlet weak var userName: UILabel!
@@ -22,7 +22,6 @@ class FirstViewController: UIViewController, GetProfileDeligate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
     }
     

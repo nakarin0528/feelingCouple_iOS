@@ -9,7 +9,7 @@
 import UIKit
 import SCLAlertView
 
-class RoomViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RoomViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     var blep = BLEP.sharedBleP
     var prof = Profile.sharedProfile

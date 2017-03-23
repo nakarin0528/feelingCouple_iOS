@@ -9,7 +9,7 @@
 import UIKit
 import SCLAlertView
 
-class StartedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class StartedViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     var timer: Timer!
     private var myItems: [String] = []

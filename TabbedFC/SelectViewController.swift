@@ -9,7 +9,7 @@
 import UIKit
 import SCLAlertView
 
-class SelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SelectViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     var ble = BLE.sharedBle
     var timer: Timer!
@@ -62,7 +62,9 @@ class SelectViewController: UIViewController, UITableViewDelegate, UITableViewDa
         lastCell?.accessoryType = .none
         lastCell = tableView.cellForRow(at:indexPath)
         let cell = tableView.cellForRow(at:indexPath)
+        ble.selectedNum = indexPath.row
         selectedNum = indexPath.row
+        print(ble.selectedNum)
         selectedName = ble.willPartner[indexPath.row]
         // チェックマークを入れる
         cell?.accessoryType = .checkmark
@@ -100,7 +102,7 @@ class SelectViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let startAlert = SCLAlertView()
             startAlert.addButton("OK") {
                 //ここにデータ送信・画面遷移を記述してください
-                //self.ble.sendSelectData(x: self.selectedNum!)
+                self.ble.sendSelectData()
                 self.navigationController?.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "waitresult") as! WaitingResultViewController, animated: true)
             }
             startAlert.showNotice("確認", subTitle: selectedName!+"さんに決定しますか?", closeButtonTitle: "Cancel")

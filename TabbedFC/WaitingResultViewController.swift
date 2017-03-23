@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WaitingResultViewController: UIViewController {
+class WaitingResultViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

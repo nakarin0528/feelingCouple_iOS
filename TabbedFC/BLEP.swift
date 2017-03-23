@@ -116,7 +116,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
 //            permissions: femalesNumPermissions)
         
         // キャラクタリスティックをサービスにセット
-        service.characteristics = [manCharacteristic, womanCharacteristic, writeCharacteristic]
+        service.characteristics = [manCharacteristic, womanCharacteristic, writeCharacteristic, getSelectDataCharacteristic]
 //        , malesNumCharacteristic, femalesNumCharacteristic]
         
         // サービスを Peripheral Manager にセット
