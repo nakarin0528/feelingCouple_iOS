@@ -20,15 +20,18 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     var manCharacteristic: CBMutableCharacteristic!
     var womanCharacteristic: CBMutableCharacteristic!
     var writeCharacteristic: CBMutableCharacteristic!
+    var getSelectDataCharacteristic: CBMutableCharacteristic!
 //    var malesNumCharacteristic: CBMutableCharacteristic!
 //    var femalesNumCharacteristic: CBMutableCharacteristic!
     var personal: [String] = []
     var names: [String] = []
+    var personalSelectData: [String] = []
     
     var malesCount = 0
     var femalesCount = 0
     //受け取り回数
     var count = 0
+    var count2 = 0
     
     let serviceUUID = CBUUID(string: "A000")
     
@@ -58,18 +61,21 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         let manUUID = CBUUID(string: "A001")
         let womanUUID = CBUUID(string: "A002")
         let writeUUID = CBUUID(string: "A003")
+        let getSelectDataUUID = CBUUID(string: "A004")
 //        let malesNumUUID = CBUUID(string: "A004")
 //        let femalesNumUUID = CBUUID(string: "A005")
         
         let manReadProperties: CBCharacteristicProperties = [.read]
         let womanReadProperties: CBCharacteristicProperties = [.read]
         let writeProperties: CBCharacteristicProperties = [.write]
+        let getSelectDataProperties: CBCharacteristicProperties = [.write]
 //        let malesNumProperties: CBCharacteristicProperties = [.read]
 //        let femalesNumProperties: CBCharacteristicProperties = [.read]
         
         let manReadPermissions: CBAttributePermissions = [.readable]
         let womanReadPermissions: CBAttributePermissions = [.readable]
         let writePermissions: CBAttributePermissions = [.writeable]
+        let getSelectDataPermissions: CBAttributePermissions = [.writeable]
 //        let malesNumPermissions: CBAttributePermissions = [.readable]
 //        let femalesNumPermissions: CBAttributePermissions = [.readable]
         
@@ -90,6 +96,12 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
             properties: writeProperties,
             value: nil,
             permissions: writePermissions)
+        
+        getSelectDataCharacteristic = CBMutableCharacteristic(
+            type: getSelectDataUUID,
+            properties: getSelectDataProperties,
+            value: nil,
+            permissions: getSelectDataPermissions)
         
 //        malesNumCharacteristic = CBMutableCharacteristic(
 //            type: malesNumUUID,
@@ -247,6 +259,28 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
                         count = 0
                     } else {
                         names.append(text! as String)
+                        count = count + 1
+                    }
+                }
+            }
+            
+            if request.characteristic.uuid.isEqual(getSelectDataCharacteristic.uuid){
+                // CBMutableCharacteristicのvalueに、CBATTRequestのvalueをセット
+                getSelectDataCharacteristic.value = request.value;
+                
+                let text = NSString(data: request.value!, encoding: String.Encoding.utf8.rawValue)
+                print(text!)
+                personalSelectData.append(text! as String)
+                
+                if count <= 2 {
+                    if count == 2 {
+                        //データを処理するクラスに渡す
+                        data.関数
+                        
+                        
+                        personalSelectData.removeAll()
+                        count = 0
+                    } else {
                         count = count + 1
                     }
                 }

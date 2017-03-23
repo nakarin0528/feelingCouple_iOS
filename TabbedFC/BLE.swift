@@ -18,6 +18,7 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     var writeCharacteristic: CBCharacteristic!
     var manReadCharacteristic: CBCharacteristic!
     var womanReadCharacteristic: CBCharacteristic!
+    var selectDataCharacteristic: CBCharacteristic!
 //    var malesNumCharacteristic: CBCharacteristic!
 //    var femalesNumCharacteristic: CBCharacteristic!
     var myPeripheral: [CBPeripheral] = []
@@ -31,11 +32,14 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     var malesNum = 0
     var femalesNum = 0
     var willPartner: [String] = []
+    //選んだ異性
+    var num = 0
 
     
     let manUUID = "A001"
     let womanUUID = "A002"
     let writeUUID = "A003"
+    let selectDataUUID = "A004"
 //    let malesNumUUID = "A004"
 //    let femalesNumUUID = "A005"
     
@@ -187,13 +191,17 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
             if characteristic.uuid.isEqual(CBUUID(string: womanUUID)){
                 womanReadCharacteristic = characteristic
             }
-            //プロフィールを書き込めるキャラククタリスティック
+            //プロフィールを書き込めるキャラクタリスティック
             if characteristic.uuid.isEqual(CBUUID(string: writeUUID)) {
                 writeCharacteristic = characteristic
                 if isFirst {
                     sendProfile()
                     isFirst = false
                 }
+            }
+            //セレクトデータを書き込めるキャラクタリスティック
+            if characteristic.uuid.isEqual(CBUUID(string: selectDataUUID)){
+                selectDataCharacteristic = characteristic
             }
 //            //男の人数を得るキャラクタリスティック
 //            if characteristic.uuid.isEqual(CBUUID(string: malesNumUUID)){
@@ -324,6 +332,32 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
         }
         //centralManager = CBCentralManager(delegate: self, queue: nil)
         centralManager.stopScan()
+    }
+    
+    //相手をセレクト
+    public func sendSelectData(){
+        centralManager.connect(peripheral, options: nil)
+        
+        let namtmp = Profile.sharedProfile.name.data(using:String.Encoding.utf8)
+        let gentmp = Profile.sharedProfile.gender.data(using:String.Encoding.utf8)
+        
+        
+        if self.peripheral.state.rawValue == 0 {
+            initBle()
+        }
+        
+        do{
+            try peripheral.writeValue(namtmp! as Data, for: selectDataCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            
+            try peripheral.writeValue(gentmp! as Data, for: selectDataCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            
+            try peripheral.writeValue(num! as Data, for: selectDataCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            //一旦接続を切る
+            //centralManager = CBCentralManager(delegate: self, queue: nil)
+            centralManager.stopScan()
+        }catch{
+            initBle()
+        }
     }
     
     func differentPeripheral(){

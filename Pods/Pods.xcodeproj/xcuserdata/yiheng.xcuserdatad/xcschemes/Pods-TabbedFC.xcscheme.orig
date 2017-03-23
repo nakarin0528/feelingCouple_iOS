@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
+<<<<<<< HEAD
    LastUpgradeVersion = "0820"
+=======
+   LastUpgradeVersion = "0700"
+>>>>>>> UI
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -60,6 +64,7 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+<<<<<<< HEAD
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -69,6 +74,8 @@
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+=======
+>>>>>>> UI
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
