@@ -16,7 +16,7 @@ class BaseViewController: UIViewController {
         //background
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.4620226622, green: 0.8382837176, blue: 1, alpha: 0.5)
         //タイトル画像
-        self.navigationItem.titleView = UIImageView(image:UIImage(named:"smallHeart.png"))
+        self.navigationItem.titleView = UIImageView(image:UIImage(named:"newHeart.png"))
         //ボタン
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         // Do any additional setup after loading the view.

@@ -18,8 +18,11 @@
 		DB972FB51E705E8200883A5F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB972FB41E705E8200883A5F /* ProfileViewController.swift */; };
 		DBDC85C41E84072E0066E446 /* smallHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDC85C31E84072E0066E446 /* smallHeart.png */; };
 		DBDC85C61E840D380066E446 /* AK-ANGEL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBDC85C51E840D380066E446 /* AK-ANGEL.ttf */; };
+		DBDC85CC1E841A290066E446 /* newHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDC85CB1E841A290066E446 /* newHeart.png */; };
+		DBDC85D01E841BC50066E446 /* LaunchHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDC85CF1E841BC50066E446 /* LaunchHeart.png */; };
 		DBE270251E810D5E00C938F6 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE270241E810D5E00C938F6 /* SelectViewController.swift */; };
 		DBEA0BAB1E7D2AAB0045CA0E /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */; };
+		DE5421691E84089600F53ACD /* LaunchAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5421681E84089600F53ACD /* LaunchAnimationViewController.swift */; };
 		DE86A09E1E824E8600DADE33 /* StartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A09D1E824E8600DADE33 /* StartedViewController.swift */; };
 		DEA6FECE1E839AB300AFDFC1 /* WaitingResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6FECD1E839AB300AFDFC1 /* WaitingResultViewController.swift */; };
 		DED073351E6C246D00092366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED073341E6C246D00092366 /* AppDelegate.swift */; };
@@ -50,8 +53,11 @@
 		DB972FB41E705E8200883A5F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DBDC85C31E84072E0066E446 /* smallHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallHeart.png; sourceTree = "<group>"; };
 		DBDC85C51E840D380066E446 /* AK-ANGEL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AK-ANGEL.ttf"; sourceTree = "<group>"; };
+		DBDC85CB1E841A290066E446 /* newHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newHeart.png; sourceTree = "<group>"; };
+		DBDC85CF1E841BC50066E446 /* LaunchHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchHeart.png; sourceTree = "<group>"; };
 		DBE270241E810D5E00C938F6 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		DE5421681E84089600F53ACD /* LaunchAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchAnimationViewController.swift; sourceTree = "<group>"; };
 		DE86A09D1E824E8600DADE33 /* StartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartedViewController.swift; sourceTree = "<group>"; };
 		DEA6FECD1E839AB300AFDFC1 /* WaitingResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingResultViewController.swift; sourceTree = "<group>"; };
 		DED073311E6C246D00092366 /* TabbedFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabbedFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,9 +141,12 @@
 				EDAC0FF01E77BA8D00ADADDA /* camera.png */,
 				EDAC0FF11E77BA8D00ADADDA /* library.png */,
 				DBDC85C31E84072E0066E446 /* smallHeart.png */,
+				DBDC85CB1E841A290066E446 /* newHeart.png */,
+				DBDC85CF1E841BC50066E446 /* LaunchHeart.png */,
 				DBDC85C51E840D380066E446 /* AK-ANGEL.ttf */,
 				DED0733D1E6C246D00092366 /* Assets.xcassets */,
 				DED0733F1E6C246D00092366 /* LaunchScreen.storyboard */,
+				DE5421681E84089600F53ACD /* LaunchAnimationViewController.swift */,
 				DED073421E6C246D00092366 /* Info.plist */,
 			);
 			path = TabbedFC;
@@ -216,9 +225,11 @@
 			files = (
 				DBDC85C61E840D380066E446 /* AK-ANGEL.ttf in Resources */,
 				EDAC0FF31E77BA8D00ADADDA /* library.png in Resources */,
+				DBDC85D01E841BC50066E446 /* LaunchHeart.png in Resources */,
 				DED073411E6C246D00092366 /* LaunchScreen.storyboard in Resources */,
 				DBDC85C41E84072E0066E446 /* smallHeart.png in Resources */,
 				DED0733E1E6C246D00092366 /* Assets.xcassets in Resources */,
+				DBDC85CC1E841A290066E446 /* newHeart.png in Resources */,
 				EDAC0FF21E77BA8D00ADADDA /* camera.png in Resources */,
 				DED0733C1E6C246D00092366 /* Main.storyboard in Resources */,
 			);
@@ -279,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE5421691E84089600F53ACD /* LaunchAnimationViewController.swift in Sources */,
 				DB08DD6D1E766E50008DA4D1 /* WaitingAroundViewController.swift in Sources */,
 				DB08DD631E765437008DA4D1 /* BLE.swift in Sources */,
 				DBEA0BAB1E7D2AAB0045CA0E /* RoomViewController.swift in Sources */,
