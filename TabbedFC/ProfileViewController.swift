@@ -25,9 +25,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var theProf: Array<Any> = [Profile.sharedProfile.name,Profile.sharedProfile.gender]
+        var theProf: Array<Any> = [Profile.sharedProfile.name, Profile.sharedProfile.gender]
         theProf = Profile.sharedProfile.readProf()
-        //print(Profile.sharedProfile.gender)
         nameText.text = theProf[0] as! String
         genderSelection.selectedSegmentIndex = Int(theProf[1] as! String)!
         
@@ -84,7 +83,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             backImageView.image = pickedImage
-//            Profile.sharedProfile.profArray.append(pickedImage)
             if cflag == 1{
                 UIImageWriteToSavedPhotosAlbum(pickedImage, self, nil, nil)
             }
@@ -106,6 +104,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         profile.name = nameText.text!
         profile.profArray[0] = nameText.text!
         profile.profArray[1] = gender
+        //profile.profArray.append(backImageView.image)
         print(Profile.sharedProfile.profArray)
         Profile.sharedProfile.saveProf()
         print(Profile.sharedProfile.readProf())

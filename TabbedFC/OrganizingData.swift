@@ -36,4 +36,8 @@ class OrganizingData: NSObject{
             }
         }
     }
+    
+//    func matching(targetData: [[String]]){       ここに関数
+//        for i in 0...targetData.count
+//    }
 }
