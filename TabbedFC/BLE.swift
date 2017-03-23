@@ -19,8 +19,8 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     var manReadCharacteristic: CBCharacteristic!
     var womanReadCharacteristic: CBCharacteristic!
     var selectDataCharacteristic: CBCharacteristic!
-//    var malesNumCharacteristic: CBCharacteristic!
-//    var femalesNumCharacteristic: CBCharacteristic!
+    var malesNumCharacteristic: CBCharacteristic!
+    var femalesNumCharacteristic: CBCharacteristic!
     var myPeripheral: [CBPeripheral] = []
     var peripheralList: [String] = []
     static var flag = false
@@ -29,8 +29,7 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     var isFirst = true
     
     //異性の数
-    var malesNum = 0
-    var femalesNum = 0
+    var willPartnerNum = 0
     var willPartner: [String] = []
     var selectedNum = 0
     
@@ -38,8 +37,8 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     let womanUUID = "A002"
     let writeUUID = "A003"
     let selectDataUUID = "A004"
-//    let malesNumUUID = "A004"
-//    let femalesNumUUID = "A005"
+    let malesNumUUID = "A005"
+    let femalesNumUUID = "A006"
     
     static let sharedBle = BLE()
     var peripheralDelegate: GetPeripheralDelegate?
@@ -201,14 +200,19 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
             if characteristic.uuid.isEqual(CBUUID(string: selectDataUUID)){
                 selectDataCharacteristic = characteristic
             }
-//            //男の人数を得るキャラクタリスティック
-//            if characteristic.uuid.isEqual(CBUUID(string: malesNumUUID)){
-//                malesNumCharacteristic = characteristic
-//            }
-//            //女の人数を得るキャラクタリスティック
-//            if characteristic.uuid.isEqual(CBUUID(string: femalesNumUUID)){
-//                femalesNumCharacteristic = characteristic
-//            }
+            //男の人数を得るキャラクタリスティック
+            if characteristic.uuid.isEqual(CBUUID(string: malesNumUUID)){
+                malesNumCharacteristic = characteristic
+                if profile.gender == "1"{
+                    peripheral.readValue(for: characteristic)
+                }
+            }
+            //女の人数を得るキャラクタリスティック
+            if characteristic.uuid.isEqual(CBUUID(string: femalesNumUUID)){                femalesNumCharacteristic = characteristic
+                if profile.gender == "0"{
+                    peripheral.readValue(for: characteristic)
+                }
+            }
         }
             centralManager.stopScan()
 
@@ -234,18 +238,16 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
             print(text!)
 
         }
-//        if characteristic.uuid.isEqual(CBUUID(string: malesNumUUID)){
-//            let text = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue)
-//            willPartnerNum = Int(text as! String)!
-//            print("相手候補\(willPartner)+1人")
-//            womanRead()
-//        }
-//        if characteristic.uuid.isEqual(CBUUID(string: femalesNumUUID)){
-//            let text = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue)
-//            willPartnerNum = Int(text as! String)!
-//            print("相手候補\(willPartner)+1人")
-//            manRead()
-//        }
+        if characteristic.uuid.isEqual(CBUUID(string: malesNumUUID)){
+            let text = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue)
+            willPartnerNum = Int(text as! String)!
+            print("相手候補\(willPartnerNum)+1人")
+        }
+        if characteristic.uuid.isEqual(CBUUID(string: femalesNumUUID)){
+            let text = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue)
+            willPartnerNum = Int(text as! String)!
+            print("相手候補\(willPartnerNum)+1人")
+        }
     }
     
     
@@ -271,6 +273,13 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
             try peripheral.writeValue(namtmp! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
             
             try peripheral.writeValue(gentmp! as Data, for: writeCharacteristic, type: CBCharacteristicWriteType.withResponse)
+            /*
+            if profile.gender == "0" {
+                readFemalesNum()
+            } else {
+                readMalesNum()
+            }
+ */
             //一旦接続を切る
             //centralManager = CBCentralManager(delegate: self, queue: nil)
             centralManager.stopScan()
@@ -278,34 +287,32 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
             initBle()
         }
     }
+    /*
+    //男の人数をゲット
+    public func readMalesNum(){
+        do{
+            peripheral.readValue(for: malesNumCharacteristic)
+            
+        }catch{
+            initBle()
+        }
+    }
     
-//    //男の人数をゲット
-//    public func readMalesNum(){
-//        centralManager.connect(peripheral, options: nil)
-//        do{
-//            peripheral.readValue(for: malesNumCharacteristic)
-//            
-//        }catch{
-//            initBle()
-//        }
-//    }
-//    
-//    //女の人数をゲット
-//    public func readFemalesNum(){
-//        centralManager.connect(peripheral, options: nil)
-//        do{
-//            peripheral.readValue(for: femalesNumCharacteristic)
-//            
-//        }catch{
-//            initBle()
-//        }
-//    }
-
+    //女の人数をゲット
+    public func readFemalesNum(){
+        do{
+            peripheral.readValue(for: femalesNumCharacteristic)
+            
+        }catch{
+            initBle()
+        }
+    }
+    */
     //男が読み取る
     public func manRead(){
         centralManager.connect(peripheral, options: nil)
 
-        for i in 0...femalesNum {
+        for i in 0...willPartnerNum {
             do{
                 peripheral.readValue(for: manReadCharacteristic)
             }catch{
@@ -321,7 +328,7 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     public func womanRead(){
         centralManager.connect(peripheral, options: nil)
 
-        for i in 0...malesNum {
+        for i in 0...willPartnerNum {
             do{
                 peripheral.readValue(for: womanReadCharacteristic)
             }catch{

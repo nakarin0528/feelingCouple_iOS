@@ -72,6 +72,7 @@ class RoomViewController: BaseViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        blep.startAdvertise()
     }
     
     @IBAction func decideParticipants(_ sender: Any) {

@@ -21,8 +21,12 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     var womanCharacteristic: CBMutableCharacteristic!
     var writeCharacteristic: CBMutableCharacteristic!
     var getSelectDataCharacteristic: CBMutableCharacteristic!
-//    var malesNumCharacteristic: CBMutableCharacteristic!
-//    var femalesNumCharacteristic: CBMutableCharacteristic!
+    var malesNumCharacteristic: CBMutableCharacteristic!
+    var femalesNumCharacteristic: CBMutableCharacteristic!
+    
+    //参加人数
+    var malesNum = 0
+    var femalesNum = 0
     var personal: [String] = []
     var names: [String] = []
     var personalSelectData: [String] = []
@@ -62,22 +66,22 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         let womanUUID = CBUUID(string: "A002")
         let writeUUID = CBUUID(string: "A003")
         let getSelectDataUUID = CBUUID(string: "A004")
-//        let malesNumUUID = CBUUID(string: "A004")
-//        let femalesNumUUID = CBUUID(string: "A005")
+        let malesNumUUID = CBUUID(string: "A005")
+        let femalesNumUUID = CBUUID(string: "A006")
         
         let manReadProperties: CBCharacteristicProperties = [.read]
         let womanReadProperties: CBCharacteristicProperties = [.read]
         let writeProperties: CBCharacteristicProperties = [.write]
         let getSelectDataProperties: CBCharacteristicProperties = [.write]
-//        let malesNumProperties: CBCharacteristicProperties = [.read]
-//        let femalesNumProperties: CBCharacteristicProperties = [.read]
+        let malesNumProperties: CBCharacteristicProperties = [.read]
+        let femalesNumProperties: CBCharacteristicProperties = [.read]
         
         let manReadPermissions: CBAttributePermissions = [.readable]
         let womanReadPermissions: CBAttributePermissions = [.readable]
         let writePermissions: CBAttributePermissions = [.writeable]
         let getSelectDataPermissions: CBAttributePermissions = [.writeable]
-//        let malesNumPermissions: CBAttributePermissions = [.readable]
-//        let femalesNumPermissions: CBAttributePermissions = [.readable]
+        let malesNumPermissions: CBAttributePermissions = [.readable]
+        let femalesNumPermissions: CBAttributePermissions = [.readable]
         
         manCharacteristic = CBMutableCharacteristic(
             type: manUUID,
@@ -103,28 +107,27 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
             value: nil,
             permissions: getSelectDataPermissions)
         
-//        malesNumCharacteristic = CBMutableCharacteristic(
-//            type: malesNumUUID,
-//            properties: malesNumProperties,
-//            value: nil,
-//            permissions: malesNumPermissions)
-//        
-//        femalesNumCharacteristic = CBMutableCharacteristic(
-//            type: femalesNumUUID,
-//            properties: femalesNumProperties,
-//            value: nil,
-//            permissions: femalesNumPermissions)
+        malesNumCharacteristic = CBMutableCharacteristic(
+            type: malesNumUUID,
+            properties: malesNumProperties,
+            value: nil,
+            permissions: malesNumPermissions)
+
+        femalesNumCharacteristic = CBMutableCharacteristic(
+            type: femalesNumUUID,
+            properties: femalesNumProperties,
+            value: nil,
+            permissions: femalesNumPermissions)
         
         // キャラクタリスティックをサービスにセット
-        service.characteristics = [manCharacteristic, womanCharacteristic, writeCharacteristic, getSelectDataCharacteristic]
-//        , malesNumCharacteristic, femalesNumCharacteristic]
+        service.characteristics = [manCharacteristic, womanCharacteristic, writeCharacteristic, getSelectDataCharacteristic, malesNumCharacteristic, femalesNumCharacteristic]
         
         // サービスを Peripheral Manager にセット
         peripheralManager.add(service)
 
     }
     
-    private func startAdvertise() {
+    func startAdvertise() {
         // アドバタイズメントデータを作成する
         let advertisementData = [
             CBAdvertisementDataLocalNameKey: profile.name+"'s Room",
@@ -164,7 +167,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         print("サービス追加成功！")
         
         // アドバタイズ開始
-        startAdvertise()
+        //startAdvertise()
     }
     
     // アドバタイズ開始処理が完了すると呼ばれる
@@ -181,21 +184,23 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
         print("Readリクエスト受信！ requested service uuid:\(request.characteristic.service.uuid) characteristic uuid:\(request.characteristic.uuid) value:\(request.characteristic.value)")
         
-//        //女に男の人数を送る
-//        if request.characteristic.uuid.isEqual(malesNumCharacteristic.uuid){
-//            let num = String(data.males.count-1)
-//            let value = num.data(using:String.Encoding.utf8)
-//            malesNumCharacteristic.value = value
-//            request.value = malesNumCharacteristic.value
-//        }
-//        
-//        //男に女の人数を送る
-//        if request.characteristic.uuid.isEqual(femalesNumCharacteristic.uuid){
-//            let num = String(data.males.count-1)
-//            let value = num.data(using:String.Encoding.utf8)
-//            femalesNumCharacteristic.value = value
-//            request.value = femalesNumCharacteristic.value
-//        }
+        //女に男の人数を送る
+        if request.characteristic.uuid.isEqual(malesNumCharacteristic.uuid){
+            let num = String(malesNum)
+            let value = num.data(using:String.Encoding.utf8)
+            malesNumCharacteristic.value = value
+            request.value = malesNumCharacteristic.value
+            peripheralManager.respond(to: request, withResult: CBATTError.Code.success)
+        }
+        
+        //男に女の人数を送る
+        if request.characteristic.uuid.isEqual(femalesNumCharacteristic.uuid){
+            let num = String(femalesNum)
+            let value = num.data(using:String.Encoding.utf8)
+            femalesNumCharacteristic.value = value
+            request.value = femalesNumCharacteristic.value
+            peripheralManager.respond(to: request, withResult: CBATTError.Code.success)
+        }
         
         // 男に送信
         if request.characteristic.uuid.isEqual(manCharacteristic.uuid) {

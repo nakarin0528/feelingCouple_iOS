@@ -10,6 +10,8 @@ import UIKit
 
 class PartisipantsNoViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    var blep = BLEP.sharedBleP
+    
     @IBOutlet weak var partisipantsNo: UIPickerView!
     
     let compos = [["1人", "2人", "3人", "4人"], ["1人", "2人", "3人", "4人"]]
@@ -43,6 +45,8 @@ class PartisipantsNoViewController: BaseViewController, UIPickerViewDelegate, UI
         let row1 = pickerView.selectedRow(inComponent: 0)
         let row2 = pickerView.selectedRow(inComponent: 1)
         print(row1, row2)
+        blep.malesNum = row1
+        blep.femalesNum = row2
         
         let item1 = self.pickerView(pickerView, titleForRow: row1, forComponent: 0)
         let item2 = self.pickerView(pickerView, titleForRow: row2, forComponent: 1)
