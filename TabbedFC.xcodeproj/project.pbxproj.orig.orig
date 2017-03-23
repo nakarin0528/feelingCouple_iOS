@@ -117,8 +117,15 @@
 				DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */,
 				DB08DD661E765A6F008DA4D1 /* GetPeripheralDelegate.swift */,
 				DED0733A1E6C246D00092366 /* Main.storyboard */,
+<<<<<<< HEAD
 				DE86A09D1E824E8600DADE33 /* StartedViewController.swift */,
+=======
 				DBE270241E810D5E00C938F6 /* SelectViewController.swift */,
+<<<<<<< HEAD
+>>>>>>> 570a6c898ece1022332c4f09def59d40a2aeeec6
+=======
+>>>>>>> master
+>>>>>>> UI
 				EDAC0FF01E77BA8D00ADADDA /* camera.png */,
 				EDAC0FF11E77BA8D00ADADDA /* library.png */,
 				DED0733D1E6C246D00092366 /* Assets.xcassets */,
