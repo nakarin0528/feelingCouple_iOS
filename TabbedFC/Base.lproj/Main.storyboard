@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gWi-Bo-DgS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -140,13 +140,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participants List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeP-Vi-4b4">
-                                <rect key="frame" x="82" y="144" width="211" height="36"/>
+                                <rect key="frame" x="82" y="100" width="211" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmW-fL-d8v">
-                                <rect key="frame" x="165.5" y="557" width="43" height="36"/>
+                                <rect key="frame" x="165.5" y="606" width="43" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -154,7 +154,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mGR-Gb-v1q">
-                                <rect key="frame" x="46" y="205" width="283" height="327"/>
+                                <rect key="frame" x="46" y="161" width="283" height="420"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -588,6 +588,40 @@
             </objects>
             <point key="canvasLocation" x="-26" y="-371"/>
         </scene>
+        <!--Launch Animation View Controller-->
+        <scene sceneID="w5I-Yn-7Fi">
+            <objects>
+                <viewController id="gWi-Bo-DgS" customClass="LaunchAnimationViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VnW-3E-itl"/>
+                        <viewControllerLayoutGuide type="bottom" id="CkT-lO-5Ra"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EMx-1r-pMr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="VVH-TH-tOJ">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="EJS-P1-K4f"/>
+                                    <constraint firstAttribute="width" constant="200" id="xQj-aL-pV8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VVH-TH-tOJ" firstAttribute="centerY" secondItem="EMx-1r-pMr" secondAttribute="centerY" id="Tx7-2Y-Ja0"/>
+                            <constraint firstItem="VVH-TH-tOJ" firstAttribute="centerX" secondItem="EMx-1r-pMr" secondAttribute="centerX" id="yfM-dX-zgx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="launchheart" destination="VVH-TH-tOJ" id="IuM-BN-faa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vxs-LJ-te2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1297" y="-1089"/>
+        </scene>
         <!--Home-->
         <scene sceneID="HwQ-dz-EIK">
             <objects>
@@ -611,6 +645,7 @@
     <resources>
         <image name="History" width="32" height="32"/>
         <image name="Home" width="32" height="32"/>
+        <image name="Launch" width="256" height="256"/>
         <image name="Profile" width="32" height="32"/>
         <image name="camera.png" width="128" height="128"/>
         <image name="library.png" width="128" height="128"/>
