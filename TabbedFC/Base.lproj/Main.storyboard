@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AK-ANGEL.ttf">
+            <string>AKANGEL</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--First View Controller-->
         <scene sceneID="hNz-n2-bh7">
@@ -22,14 +27,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feeling Couple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXK-xf-mko">
-                                <rect key="frame" x="88" y="164" width="199" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FeelingCouple-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXK-xf-mko">
+                                <rect key="frame" x="63" y="164" width="250" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="OKr-Ks-8rO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AKANGEL" family="AK ANGEL" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iK-oX-coK">
-                                <rect key="frame" x="122" y="350" width="132" height="42"/>
+                                <rect key="frame" x="122" y="384" width="132" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Make Room"/>
                                 <connections>
@@ -37,7 +45,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xc2-JU-WtP">
-                                <rect key="frame" x="129" y="472" width="118" height="42"/>
+                                <rect key="frame" x="129" y="506" width="118" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Join Room"/>
                                 <connections>
@@ -55,7 +63,7 @@
                         <constraints>
                             <constraint firstItem="Xc2-JU-WtP" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="2fJ-00-S54"/>
                             <constraint firstItem="Dcx-qu-0zr" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="45" id="6Dq-YY-Ph7"/>
-                            <constraint firstItem="6iK-oX-coK" firstAttribute="top" secondItem="gXK-xf-mko" secondAttribute="bottom" constant="150" id="CfC-Jj-8HS"/>
+                            <constraint firstItem="6iK-oX-coK" firstAttribute="top" secondItem="gXK-xf-mko" secondAttribute="bottom" constant="140" id="CfC-Jj-8HS"/>
                             <constraint firstItem="gXK-xf-mko" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="IjF-2w-tEM"/>
                             <constraint firstItem="Xc2-JU-WtP" firstAttribute="top" secondItem="6iK-oX-coK" secondAttribute="bottom" constant="80" id="Mf8-QT-JMb"/>
                             <constraint firstItem="6iK-oX-coK" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="ofh-BV-Ff6"/>
@@ -140,13 +148,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participants List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeP-Vi-4b4">
-                                <rect key="frame" x="82" y="144" width="211" height="36"/>
+                                <rect key="frame" x="82" y="100" width="211" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmW-fL-d8v">
-                                <rect key="frame" x="165.5" y="557" width="43" height="36"/>
+                                <rect key="frame" x="165.5" y="606" width="43" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -154,7 +162,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mGR-Gb-v1q">
-                                <rect key="frame" x="46" y="205" width="283" height="327"/>
+                                <rect key="frame" x="46" y="161" width="283" height="420"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
