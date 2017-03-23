@@ -44,7 +44,7 @@ class LaunchAnimationViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             let storyboard: UIStoryboard = self.storyboard!
-            let nextView = storyboard.instantiateViewController(withIdentifier: "start")
+            let nextView = storyboard.instantiateViewController(withIdentifier: "tabbar")
             self.present(nextView, animated: false, completion: nil)
         }
     }
