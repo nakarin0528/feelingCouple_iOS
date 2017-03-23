@@ -46,7 +46,7 @@ class FirstViewController: UIViewController, GetProfileDeligate {
             }
             profAlert.showEdit("プロフィール未設定", subTitle: "名前と性別を設定してください") // Edit
         } else {
-            self.navigationController?.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "room") as! RoomViewController, animated: true)
+            self.navigationController?.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "pno") as! PartisipantsNoViewController, animated: true)
         }
     }
     

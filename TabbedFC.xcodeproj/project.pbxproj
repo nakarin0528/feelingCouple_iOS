@@ -18,6 +18,7 @@
 		DBE270251E810D5E00C938F6 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE270241E810D5E00C938F6 /* SelectViewController.swift */; };
 		DBEA0BAB1E7D2AAB0045CA0E /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */; };
 		DE86A09E1E824E8600DADE33 /* StartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A09D1E824E8600DADE33 /* StartedViewController.swift */; };
+		DEA6FECE1E839AB300AFDFC1 /* WaitingResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6FECD1E839AB300AFDFC1 /* WaitingResultViewController.swift */; };
 		DED073351E6C246D00092366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED073341E6C246D00092366 /* AppDelegate.swift */; };
 		DED073371E6C246D00092366 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED073361E6C246D00092366 /* FirstViewController.swift */; };
 		DED073391E6C246D00092366 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED073381E6C246D00092366 /* SecondViewController.swift */; };
@@ -46,6 +47,7 @@
 		DBE270241E810D5E00C938F6 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		DE86A09D1E824E8600DADE33 /* StartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartedViewController.swift; sourceTree = "<group>"; };
+		DEA6FECD1E839AB300AFDFC1 /* WaitingResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingResultViewController.swift; sourceTree = "<group>"; };
 		DED073311E6C246D00092366 /* TabbedFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabbedFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED073341E6C246D00092366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DED073361E6C246D00092366 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				EDAC0FF81E831FC500ADADDA /* PartisipantsNoViewController.swift */,
 				DB08DD621E765436008DA4D1 /* BLE.swift */,
 				DB0B8E691E78FDE800D2DCCB /* BLEP.swift */,
+				DEA6FECD1E839AB300AFDFC1 /* WaitingResultViewController.swift */,
 				DEE86D1C1E7F66C5005985E9 /* OrganizingData.swift */,
 				ED3D20931E6E5F9700643353 /* GetProfileDeligate.swift */,
 				DB08DD641E765A5F008DA4D1 /* AroundSerchViewController.swift */,
@@ -174,7 +177,7 @@
 				TargetAttributes = {
 					DED073301E6C246D00092366 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 893D7556GH;
+						DevelopmentTeam = KE34B4UU7B;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -276,6 +279,7 @@
 				DED073351E6C246D00092366 /* AppDelegate.swift in Sources */,
 				ED3D20941E6E5F9700643353 /* GetProfileDeligate.swift in Sources */,
 				DB08DD671E765A6F008DA4D1 /* GetPeripheralDelegate.swift in Sources */,
+				DEA6FECE1E839AB300AFDFC1 /* WaitingResultViewController.swift in Sources */,
 				DBE270251E810D5E00C938F6 /* SelectViewController.swift in Sources */,
 				EDAC0FF91E831FC500ADADDA /* PartisipantsNoViewController.swift in Sources */,
 				DB972FB51E705E8200883A5F /* ProfileViewController.swift in Sources */,
@@ -408,10 +412,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 893D7556GH;
+				DEVELOPMENT_TEAM = KE34B4UU7B;
 				INFOPLIST_FILE = TabbedFC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCnakari;
+				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -424,10 +428,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 893D7556GH;
+				DEVELOPMENT_TEAM = KE34B4UU7B;
 				INFOPLIST_FILE = TabbedFC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCnakari;
+				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
