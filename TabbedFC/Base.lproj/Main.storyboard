@@ -85,13 +85,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participants List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeP-Vi-4b4">
-                                <rect key="frame" x="82" y="144" width="211" height="36"/>
+                                <rect key="frame" x="82" y="100" width="211" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmW-fL-d8v">
-                                <rect key="frame" x="165.5" y="557" width="43" height="36"/>
+                                <rect key="frame" x="165.5" y="606" width="43" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -99,7 +99,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mGR-Gb-v1q">
-                                <rect key="frame" x="46" y="205" width="283" height="327"/>
+                                <rect key="frame" x="46" y="161" width="283" height="420"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -341,27 +341,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="司会者にいいよって言われたら押してね" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHl-Gm-GNm">
-                                <rect key="frame" x="13.5" y="322" width="348.5" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ルームマスターの合図の後に 押してください" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHl-Gm-GNm">
+                                <rect key="frame" x="43" y="307.5" width="290" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwL-ew-soT">
-                                <rect key="frame" x="148" y="475" width="62" height="30"/>
-                                <state key="normal" title="スタート"/>
+                                <rect key="frame" x="152.5" y="551" width="71" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Receive"/>
                                 <connections>
                                     <action selector="startButton:" destination="CAc-WU-cL7" eventType="touchUpInside" id="GOS-aI-iVm"/>
                                     <segue destination="JJI-je-eGy" kind="show" id="V19-Lm-MAg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="異性のデータを受信" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaP-T4-yAg">
+                                <rect key="frame" x="51" y="100" width="273" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dHl-Gm-GNm" firstAttribute="centerX" secondItem="3Oh-4V-vsW" secondAttribute="centerX" id="0wT-0F-BYb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dwL-ew-soT" secondAttribute="trailing" constant="149" id="Ixr-M3-uKv"/>
-                            <constraint firstItem="dwL-ew-soT" firstAttribute="top" secondItem="dHl-Gm-GNm" secondAttribute="bottom" constant="130" id="epi-wK-pK0"/>
+                            <constraint firstItem="dwL-ew-soT" firstAttribute="centerX" secondItem="3Oh-4V-vsW" secondAttribute="centerX" id="6CR-8g-CDR"/>
+                            <constraint firstItem="93k-3z-Li1" firstAttribute="top" secondItem="dwL-ew-soT" secondAttribute="bottom" constant="80" id="Sxp-wg-wlJ"/>
                             <constraint firstItem="dHl-Gm-GNm" firstAttribute="centerY" secondItem="3Oh-4V-vsW" secondAttribute="centerY" id="luH-59-yU1"/>
+                            <constraint firstItem="dwL-ew-soT" firstAttribute="centerX" secondItem="3Oh-4V-vsW" secondAttribute="centerX" id="piL-4U-gFR"/>
+                            <constraint firstItem="QaP-T4-yAg" firstAttribute="centerX" secondItem="3Oh-4V-vsW" secondAttribute="centerX" id="t8N-vN-bzg"/>
+                            <constraint firstItem="QaP-T4-yAg" firstAttribute="top" secondItem="24g-I7-uRg" secondAttribute="bottom" constant="80" id="yPh-fB-zb1"/>
                         </constraints>
                     </view>
                 </viewController>
