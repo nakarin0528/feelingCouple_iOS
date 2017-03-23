@@ -275,9 +275,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
                 if count <= 2 {
                     if count == 2 {
                         //データを処理するクラスに渡す
-                        data.関数
-                        
-                        
+
                         personalSelectData.removeAll()
                         count = 0
                     } else {

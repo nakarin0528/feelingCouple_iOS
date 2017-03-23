@@ -49,7 +49,51 @@ class OrganizingData: NSObject{
         print("女性"+"\(females)")
     }
     
-//    func matching(targetData: [[String]]){       ここに関数
-//        for i in 0...targetData.count
-//    }
+    func matching(targetData: [[String]]) -> [[String]]{
+        var mTarget = [String](repeating: "0", count: males.count) //男の人が何番の女の人を選んでるか
+        var fTarget = [String](repeating: "0", count: females.count)
+        var numberOfCouple = 0 //成立したカップル数
+        var result = [[String]]() //[[誰が,誰を選んで,カップル成立かどうか]]
+        
+        for i in 0...(targetData.count-1){ //mTarget,fTarget作成　名前版
+            if (targetData[i][0]) == "0"{
+                for j in 0...(males.count-1){
+                    if targetData[i][1] == males[j]{
+                        mTarget[j] = targetData[i][2]
+                        break
+                    }
+                }
+            } else {
+                for j in 0...(females.count-1){
+                    if targetData[i][1] == females[j]{
+                        fTarget[j] = targetData[i][2]
+                        break
+                    }
+                }
+            }
+        }
+        
+        for i in 0...(mTarget.count-1){ //result男,numberOfCouple作成
+            result.append([males[i]])
+            result[i].append(females[Int(mTarget[i])!])
+            if Int(fTarget[Int(mTarget[i])!])!  == i{
+                numberOfCouple += 1
+                result[i].append("マッチング成立！")
+            } else {
+                result[i].append("マッチング不成立…")
+            }
+        }
+        
+        for i in 0...(fTarget.count-1){ //result女作成
+            result.append([females[i]])
+            result[i+males.count].append(males[Int(fTarget[i])!])
+            if Int(mTarget[Int(fTarget[i])!])!  == i{
+                result[i+males.count].append("マッチング成立！")
+            } else {
+                result[i+males.count].append("マッチング不成立…")
+            }
+            
+        }
+        return(result)
+    }
 }
