@@ -100,8 +100,10 @@ class SelectViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let startAlert = SCLAlertView()
             startAlert.addButton("OK") {
                 //ここにデータ送信・画面遷移を記述してください
+                //self.ble.sendSelectData(x: self.selectedNum!)
+                self.navigationController?.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "waitresult") as! WaitingResultViewController, animated: true)
             }
-            startAlert.showNotice("確認", subTitle: selectedName!+"さんに決定してもいいですか?", closeButtonTitle: "Cancel")
+            startAlert.showNotice("確認", subTitle: selectedName!+"さんに決定しますか?", closeButtonTitle: "Cancel")
         }
     }
 }

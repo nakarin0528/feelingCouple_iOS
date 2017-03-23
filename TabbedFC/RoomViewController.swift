@@ -77,7 +77,7 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func decideParticipants(_ sender: Any) {
         if myItems == [] {
             let noParticipantsAlert = SCLAlertView()
-            noParticipantsAlert.showWait("待機中", subTitle: "参加者がいません") // Wait
+            noParticipantsAlert.showWait("待機中", subTitle: "参加者がいません", closeButtonTitle: "OK") // Wait
         } else {
             let startAlert = SCLAlertView()
             startAlert.addButton("Start") {
