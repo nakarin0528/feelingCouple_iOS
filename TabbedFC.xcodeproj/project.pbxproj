@@ -25,6 +25,8 @@
 		DE5421691E84089600F53ACD /* LaunchAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5421681E84089600F53ACD /* LaunchAnimationViewController.swift */; };
 		DE86A09E1E824E8600DADE33 /* StartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE86A09D1E824E8600DADE33 /* StartedViewController.swift */; };
 		DEA6FECE1E839AB300AFDFC1 /* WaitingResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6FECD1E839AB300AFDFC1 /* WaitingResultViewController.swift */; };
+		DECFA09E1E8425AF00A34145 /* Das Gitter Mac.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DECFA09D1E8425AF00A34145 /* Das Gitter Mac.ttf */; };
+		DECFA0A01E84291500A34145 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFA09F1E84291500A34145 /* BaseTabBarController.swift */; };
 		DED073351E6C246D00092366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED073341E6C246D00092366 /* AppDelegate.swift */; };
 		DED073371E6C246D00092366 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED073361E6C246D00092366 /* FirstViewController.swift */; };
 		DED073391E6C246D00092366 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED073381E6C246D00092366 /* SecondViewController.swift */; };
@@ -60,6 +62,8 @@
 		DE5421681E84089600F53ACD /* LaunchAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchAnimationViewController.swift; sourceTree = "<group>"; };
 		DE86A09D1E824E8600DADE33 /* StartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartedViewController.swift; sourceTree = "<group>"; };
 		DEA6FECD1E839AB300AFDFC1 /* WaitingResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingResultViewController.swift; sourceTree = "<group>"; };
+		DECFA09D1E8425AF00A34145 /* Das Gitter Mac.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Das Gitter Mac.ttf"; sourceTree = "<group>"; };
+		DECFA09F1E84291500A34145 /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		DED073311E6C246D00092366 /* TabbedFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabbedFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED073341E6C246D00092366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DED073361E6C246D00092366 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 				DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */,
 				DB08DD661E765A6F008DA4D1 /* GetPeripheralDelegate.swift */,
 				DED0733A1E6C246D00092366 /* Main.storyboard */,
+				DECFA09F1E84291500A34145 /* BaseTabBarController.swift */,
 				DB5A9EA61E84024400772919 /* BaseViewController.swift */,
 				DE86A09D1E824E8600DADE33 /* StartedViewController.swift */,
 				DBE270241E810D5E00C938F6 /* SelectViewController.swift */,
@@ -144,6 +149,7 @@
 				DBDC85CB1E841A290066E446 /* newHeart.png */,
 				DBDC85CF1E841BC50066E446 /* LaunchHeart.png */,
 				DBDC85C51E840D380066E446 /* AK-ANGEL.ttf */,
+				DECFA09D1E8425AF00A34145 /* Das Gitter Mac.ttf */,
 				DED0733D1E6C246D00092366 /* Assets.xcassets */,
 				DED0733F1E6C246D00092366 /* LaunchScreen.storyboard */,
 				DE5421681E84089600F53ACD /* LaunchAnimationViewController.swift */,
@@ -195,7 +201,7 @@
 				TargetAttributes = {
 					DED073301E6C246D00092366 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 893D7556GH;
+						DevelopmentTeam = KE34B4UU7B;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -225,6 +231,7 @@
 			files = (
 				DBDC85C61E840D380066E446 /* AK-ANGEL.ttf in Resources */,
 				EDAC0FF31E77BA8D00ADADDA /* library.png in Resources */,
+				DECFA09E1E8425AF00A34145 /* Das Gitter Mac.ttf in Resources */,
 				DBDC85D01E841BC50066E446 /* LaunchHeart.png in Resources */,
 				DED073411E6C246D00092366 /* LaunchScreen.storyboard in Resources */,
 				DBDC85C41E84072E0066E446 /* smallHeart.png in Resources */,
@@ -304,6 +311,7 @@
 				ED3D20941E6E5F9700643353 /* GetProfileDeligate.swift in Sources */,
 				DB08DD671E765A6F008DA4D1 /* GetPeripheralDelegate.swift in Sources */,
 				DEA6FECE1E839AB300AFDFC1 /* WaitingResultViewController.swift in Sources */,
+				DECFA0A01E84291500A34145 /* BaseTabBarController.swift in Sources */,
 				DBE270251E810D5E00C938F6 /* SelectViewController.swift in Sources */,
 				EDAC0FF91E831FC500ADADDA /* PartisipantsNoViewController.swift in Sources */,
 				DB972FB51E705E8200883A5F /* ProfileViewController.swift in Sources */,
@@ -436,10 +444,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 893D7556GH;
+				DEVELOPMENT_TEAM = KE34B4UU7B;
 				INFOPLIST_FILE = TabbedFC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCnakari;
+				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -452,10 +460,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 893D7556GH;
+				DEVELOPMENT_TEAM = KE34B4UU7B;
 				INFOPLIST_FILE = TabbedFC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCnakari;
+				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
