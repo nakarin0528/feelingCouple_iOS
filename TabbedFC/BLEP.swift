@@ -270,16 +270,17 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
                 
                 let text = NSString(data: request.value!, encoding: String.Encoding.utf8.rawValue)
                 print(text!)
-                personalSelectData.append(text! as String)
                 
                 if count <= 2 {
                     if count == 2 {
                         //データを処理するクラスに渡す
-
+                        personalSelectData.append(text! as String)
+                        data.setPersonalTarget(value: personalSelectData)
                         personalSelectData.removeAll()
                         count = 0
-                    } else {
-                        count = count + 1
+                    }else{
+                        personalSelectData.append(text! as String)
+                        count += 1
                     }
                 }
             }

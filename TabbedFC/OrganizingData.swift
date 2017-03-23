@@ -13,6 +13,7 @@ class OrganizingData: NSObject{
     var myprofile = Profile.sharedProfile
     
     var participants = [[String]]()
+    var targetData = [[String]]()
     var males: [String] = []
     var females: [String] = []
     
@@ -24,10 +25,14 @@ class OrganizingData: NSObject{
     }
     
     func setPersonalData(value: [String]) {
-
         participants.append(value)
         print("受けとったデータ")
         print(participants)
+    }
+    func setPersonalTarget(value: [String]){
+        targetData.append(value)
+        print("受け取ったデータ")
+        print(targetData)
     }
 
     func separateByGender() {
@@ -56,16 +61,16 @@ class OrganizingData: NSObject{
         var result = [[String]]() //[[誰が,誰を選んで,カップル成立かどうか]]
         
         for i in 0...(targetData.count-1){ //mTarget,fTarget作成　名前版
-            if (targetData[i][0]) == "0"{
+            if (targetData[i][1]) == "0"{
                 for j in 0...(males.count-1){
-                    if targetData[i][1] == males[j]{
+                    if targetData[i][0] == males[j]{
                         mTarget[j] = targetData[i][2]
                         break
                     }
                 }
             } else {
                 for j in 0...(females.count-1){
-                    if targetData[i][1] == females[j]{
+                    if targetData[i][0] == females[j]{
                         fTarget[j] = targetData[i][2]
                         break
                     }
