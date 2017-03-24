@@ -34,6 +34,10 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     
     var malesCount = 0
     var femalesCount = 0
+    
+    //投票した人の数
+    var ellectingNum = 0
+    
     //受け取り回数
     var count = 0
     var count2 = 0
@@ -282,6 +286,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
                 if count <= 2 {
                     if count == 2 {
                         //データを処理するクラスに渡す
+                        ellectingNum += 1
                         personalSelectData.append(text! as String)
                         data.setPersonalTarget(value: personalSelectData)
                         personalSelectData.removeAll()

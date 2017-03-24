@@ -407,7 +407,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%&amp;るーむりすと&amp;'" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEv-jM-fSv">
-                                <rect key="frame" x="78.5" y="100" width="219.5" height="30"/>
+                                <rect key="frame" x="78" y="100" width="220" height="30"/>
                                 <fontDescription key="fontDescription" name="AKANGEL" family="AK ANGEL" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -610,10 +610,10 @@
             </objects>
             <point key="canvasLocation" x="4172" y="358"/>
         </scene>
-        <!--Wating Selected Data View Controller-->
+        <!--Collect View Controller-->
         <scene sceneID="4QY-bQ-Wt3">
             <objects>
-                <viewController storyboardIdentifier="pleasewait" id="dbK-Nc-jsB" customClass="WatingSelectedDataViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pleasewait" id="dbK-Nc-jsB" customClass="CollectViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pgO-ZF-Hnl"/>
                         <viewControllerLayoutGuide type="bottom" id="rKQ-Eg-IWQ"/>
@@ -648,7 +648,7 @@
         <!--Result View Controller-->
         <scene sceneID="BN2-K6-B5S">
             <objects>
-                <viewController id="wfs-R5-AFY" customClass="ResultViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="result" id="wfs-R5-AFY" customClass="ResultViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="deX-Fq-HQZ"/>
                         <viewControllerLayoutGuide type="bottom" id="cZl-oO-aP6"/>

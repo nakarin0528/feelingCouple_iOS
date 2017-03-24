@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gWi-Bo-DgS">
-=======
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
->>>>>>> result
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -168,27 +164,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmW-fL-d8v">
-<<<<<<< HEAD
                                 <rect key="frame" x="168" y="602" width="39" height="40"/>
                                 <fontDescription key="fontDescription" name="Das_Gitter" family="Das Gitter" pointSize="20"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-=======
-                                <rect key="frame" x="165.5" y="606" width="43" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Start"/>
->>>>>>> result
                                 <connections>
                                     <action selector="decideParticipants:" destination="HVK-eT-ucQ" eventType="touchUpInside" id="qmP-Ko-YQL"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mGR-Gb-v1q">
-<<<<<<< HEAD
                                 <rect key="frame" x="46" y="161" width="283" height="416"/>
-=======
-                                <rect key="frame" x="46" y="161" width="283" height="420"/>
->>>>>>> result
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -421,7 +407,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%&amp;るーむりすと&amp;'" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEv-jM-fSv">
-                                <rect key="frame" x="78" y="100" width="220" height="30"/>
+                                <rect key="frame" x="78.5" y="100" width="219.5" height="30"/>
                                 <fontDescription key="fontDescription" name="AKANGEL" family="AK ANGEL" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -541,7 +527,6 @@
                                 </state>
                                 <connections>
                                     <action selector="decideButton:" destination="JJI-je-eGy" eventType="touchUpInside" id="byw-u6-fbA"/>
-                                    <segue destination="dbK-Nc-jsB" kind="show" id="zzE-LD-gCF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="気になる相手をえらぶ$" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oq6-hq-YPX">
@@ -623,12 +608,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4VX-lw-dVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5018" y="-322"/>
+            <point key="canvasLocation" x="4172" y="358"/>
         </scene>
-        <!--View Controller-->
+<<<<<<< HEAD
+        <!--Wating Selected Data View Controller-->
         <scene sceneID="4QY-bQ-Wt3">
             <objects>
-                <viewController id="dbK-Nc-jsB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pleasewait" id="dbK-Nc-jsB" customClass="WatingSelectedDataViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
+=======
+        <!--Collect View Controller-->
+        <scene sceneID="4QY-bQ-Wt3">
+            <objects>
+                <viewController storyboardIdentifier="pleasewait" id="dbK-Nc-jsB" customClass="CollectViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
+>>>>>>> mywk2
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pgO-ZF-Hnl"/>
                         <viewControllerLayoutGuide type="bottom" id="rKQ-Eg-IWQ"/>
@@ -658,12 +650,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ke-Gc-klM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4172" y="358"/>
+            <point key="canvasLocation" x="4985" y="-322"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="BN2-K6-B5S">
             <objects>
-                <viewController id="wfs-R5-AFY" customClass="ResultViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="result" id="wfs-R5-AFY" customClass="ResultViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="deX-Fq-HQZ"/>
                         <viewControllerLayoutGuide type="bottom" id="cZl-oO-aP6"/>
@@ -709,7 +701,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFQ-mo-vw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5017" y="359"/>
+            <point key="canvasLocation" x="5742" y="-322"/>
         </scene>
         <!--Base Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -771,7 +763,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="by0-qK-NeI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="Home" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g96-A8-OMZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="g96-A8-OMZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
