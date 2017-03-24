@@ -14,6 +14,7 @@ class OrganizingData: NSObject{
     
     var participants = [[String]]()
     var targetData = [[String]]()
+    var resultArray = [[String]]()
     var males: [String] = []
     var females: [String] = []
     

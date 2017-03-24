@@ -41,6 +41,9 @@
 		EDAC0FF31E77BA8D00ADADDA /* library.png in Resources */ = {isa = PBXBuildFile; fileRef = EDAC0FF11E77BA8D00ADADDA /* library.png */; };
 		EDAC0FF91E831FC500ADADDA /* PartisipantsNoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAC0FF81E831FC500ADADDA /* PartisipantsNoViewController.swift */; };
 		EDAC0FFB1E84FD1400ADADDA /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAC0FFA1E84FD1400ADADDA /* ResultViewController.swift */; };
+		EDAC0FFF1E854FA100ADADDA /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = EDAC0FFE1E854FA100ADADDA /* arrow.png */; };
+		EDAC10011E8564DF00ADADDA /* brokenHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = EDAC10001E8564DF00ADADDA /* brokenHeart.png */; };
+		EDAC10031E85650900ADADDA /* Heart2.png in Resources */ = {isa = PBXBuildFile; fileRef = EDAC10021E85650900ADADDA /* Heart2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +85,9 @@
 		EDAC0FF11E77BA8D00ADADDA /* library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = library.png; sourceTree = "<group>"; };
 		EDAC0FF81E831FC500ADADDA /* PartisipantsNoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartisipantsNoViewController.swift; sourceTree = "<group>"; };
 		EDAC0FFA1E84FD1400ADADDA /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		EDAC0FFE1E854FA100ADADDA /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		EDAC10001E8564DF00ADADDA /* brokenHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brokenHeart.png; sourceTree = "<group>"; };
+		EDAC10021E85650900ADADDA /* Heart2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Heart2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,7 @@
 				DE86A09D1E824E8600DADE33 /* StartedViewController.swift */,
 				DBE270241E810D5E00C938F6 /* SelectViewController.swift */,
 				EDAC0FFA1E84FD1400ADADDA /* ResultViewController.swift */,
+				EDAC0FFE1E854FA100ADADDA /* arrow.png */,
 				EDAC0FF01E77BA8D00ADADDA /* camera.png */,
 				EDAC0FF11E77BA8D00ADADDA /* library.png */,
 				DBDC85C31E84072E0066E446 /* smallHeart.png */,
@@ -156,6 +163,8 @@
 				DBDC85CF1E841BC50066E446 /* LaunchHeart.png */,
 				DBDC85C51E840D380066E446 /* AK-ANGEL.ttf */,
 				DECFA09D1E8425AF00A34145 /* Das Gitter Mac.ttf */,
+				EDAC10001E8564DF00ADADDA /* brokenHeart.png */,
+				EDAC10021E85650900ADADDA /* Heart2.png */,
 				DED0733D1E6C246D00092366 /* Assets.xcassets */,
 				DED0733F1E6C246D00092366 /* LaunchScreen.storyboard */,
 				DE5421681E84089600F53ACD /* LaunchAnimationViewController.swift */,
@@ -237,14 +246,17 @@
 			files = (
 				DBDC85C61E840D380066E446 /* AK-ANGEL.ttf in Resources */,
 				EDAC0FF31E77BA8D00ADADDA /* library.png in Resources */,
+				EDAC0FFF1E854FA100ADADDA /* arrow.png in Resources */,
 				DECFA09E1E8425AF00A34145 /* Das Gitter Mac.ttf in Resources */,
 				DBDC85D01E841BC50066E446 /* LaunchHeart.png in Resources */,
+				EDAC10031E85650900ADADDA /* Heart2.png in Resources */,
 				DED073411E6C246D00092366 /* LaunchScreen.storyboard in Resources */,
 				DBDC85C41E84072E0066E446 /* smallHeart.png in Resources */,
 				DED0733E1E6C246D00092366 /* Assets.xcassets in Resources */,
 				DBDC85CC1E841A290066E446 /* newHeart.png in Resources */,
 				EDAC0FF21E77BA8D00ADADDA /* camera.png in Resources */,
 				DED0733C1E6C246D00092366 /* Main.storyboard in Resources */,
+				EDAC10011E8564DF00ADADDA /* brokenHeart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
