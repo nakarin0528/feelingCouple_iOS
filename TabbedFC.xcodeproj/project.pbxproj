@@ -15,6 +15,7 @@
 		DB08DD6D1E766E50008DA4D1 /* WaitingAroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08DD6C1E766E50008DA4D1 /* WaitingAroundViewController.swift */; };
 		DB0B8E6A1E78FDE800D2DCCB /* BLEP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0B8E691E78FDE800D2DCCB /* BLEP.swift */; };
 		DB5A9EA71E84024400772919 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5A9EA61E84024400772919 /* BaseViewController.swift */; };
+		DB8C0C731E85423C00856AA2 /* WatingSelectedDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C0C721E85423C00856AA2 /* WatingSelectedDataViewController.swift */; };
 		DB972FB51E705E8200883A5F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB972FB41E705E8200883A5F /* ProfileViewController.swift */; };
 		DBDC85C41E84072E0066E446 /* smallHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDC85C31E84072E0066E446 /* smallHeart.png */; };
 		DBDC85C61E840D380066E446 /* AK-ANGEL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBDC85C51E840D380066E446 /* AK-ANGEL.ttf */; };
@@ -53,6 +54,7 @@
 		DB08DD6C1E766E50008DA4D1 /* WaitingAroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingAroundViewController.swift; sourceTree = "<group>"; };
 		DB0B8E691E78FDE800D2DCCB /* BLEP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEP.swift; sourceTree = "<group>"; };
 		DB5A9EA61E84024400772919 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DB8C0C721E85423C00856AA2 /* WatingSelectedDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatingSelectedDataViewController.swift; sourceTree = "<group>"; };
 		DB972FB41E705E8200883A5F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DBDC85C31E84072E0066E446 /* smallHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smallHeart.png; sourceTree = "<group>"; };
 		DBDC85C51E840D380066E446 /* AK-ANGEL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AK-ANGEL.ttf"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				DBEA0BAA1E7D2AAB0045CA0E /* RoomViewController.swift */,
 				DB08DD661E765A6F008DA4D1 /* GetPeripheralDelegate.swift */,
 				DED0733A1E6C246D00092366 /* Main.storyboard */,
+				DB8C0C721E85423C00856AA2 /* WatingSelectedDataViewController.swift */,
 				DECFA09F1E84291500A34145 /* BaseTabBarController.swift */,
 				DB5A9EA61E84024400772919 /* BaseViewController.swift */,
 				DE86A09D1E824E8600DADE33 /* StartedViewController.swift */,
@@ -304,6 +307,7 @@
 				DB08DD6D1E766E50008DA4D1 /* WaitingAroundViewController.swift in Sources */,
 				EDAC0FFB1E84FD1400ADADDA /* ResultViewController.swift in Sources */,
 				DB08DD631E765437008DA4D1 /* BLE.swift in Sources */,
+				DB8C0C731E85423C00856AA2 /* WatingSelectedDataViewController.swift in Sources */,
 				DBEA0BAB1E7D2AAB0045CA0E /* RoomViewController.swift in Sources */,
 				DED073391E6C246D00092366 /* SecondViewController.swift in Sources */,
 				DB5A9EA71E84024400772919 /* BaseViewController.swift in Sources */,

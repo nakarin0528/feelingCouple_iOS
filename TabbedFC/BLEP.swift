@@ -250,7 +250,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
         
         for request in requests {
             print("Requested value:\(request.value) service uuid:\(request.characteristic.service.uuid) characteristic uuid:\(request.characteristic.uuid)")
-        
+            //プロフィール書き込み
             if request.characteristic.uuid.isEqual(writeCharacteristic.uuid){
                 // CBMutableCharacteristicのvalueに、CBATTRequestのvalueをセット
                 writeCharacteristic.value = request.value;
@@ -271,7 +271,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
                     }
                 }
             }
-            
+            //セレクトデータ書き込み
             if request.characteristic.uuid.isEqual(getSelectDataCharacteristic.uuid){
                 // CBMutableCharacteristicのvalueに、CBATTRequestのvalueをセット
                 getSelectDataCharacteristic.value = request.value;
