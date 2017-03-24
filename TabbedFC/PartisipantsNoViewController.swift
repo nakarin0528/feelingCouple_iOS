@@ -47,7 +47,7 @@ class PartisipantsNoViewController: BaseViewController, UIPickerViewDelegate, UI
         print(row1, row2)
         blep.malesNum = row1
         blep.femalesNum = row2
-        blep.participantsNum = row1 + row2 + 2
+        BLEP.participantsNum = row1 + row2 + 2
         
         let item1 = self.pickerView(pickerView, titleForRow: row1, forComponent: 0)
         let item2 = self.pickerView(pickerView, titleForRow: row2, forComponent: 1)
