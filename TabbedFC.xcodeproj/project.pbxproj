@@ -31,6 +31,7 @@
 		EDAC0FF21E77BA8D00ADADDA /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = EDAC0FF01E77BA8D00ADADDA /* camera.png */; };
 		EDAC0FF31E77BA8D00ADADDA /* library.png in Resources */ = {isa = PBXBuildFile; fileRef = EDAC0FF11E77BA8D00ADADDA /* library.png */; };
 		EDAC0FF91E831FC500ADADDA /* PartisipantsNoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAC0FF81E831FC500ADADDA /* PartisipantsNoViewController.swift */; };
+		EDAC0FFB1E84FD1400ADADDA /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAC0FFA1E84FD1400ADADDA /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		EDAC0FF01E77BA8D00ADADDA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		EDAC0FF11E77BA8D00ADADDA /* library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = library.png; sourceTree = "<group>"; };
 		EDAC0FF81E831FC500ADADDA /* PartisipantsNoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartisipantsNoViewController.swift; sourceTree = "<group>"; };
+		EDAC0FFA1E84FD1400ADADDA /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				DED0733A1E6C246D00092366 /* Main.storyboard */,
 				DE86A09D1E824E8600DADE33 /* StartedViewController.swift */,
 				DBE270241E810D5E00C938F6 /* SelectViewController.swift */,
+				EDAC0FFA1E84FD1400ADADDA /* ResultViewController.swift */,
 				EDAC0FF01E77BA8D00ADADDA /* camera.png */,
 				EDAC0FF11E77BA8D00ADADDA /* library.png */,
 				DED0733D1E6C246D00092366 /* Assets.xcassets */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB08DD6D1E766E50008DA4D1 /* WaitingAroundViewController.swift in Sources */,
+				EDAC0FFB1E84FD1400ADADDA /* ResultViewController.swift in Sources */,
 				DB08DD631E765437008DA4D1 /* BLE.swift in Sources */,
 				DBEA0BAB1E7D2AAB0045CA0E /* RoomViewController.swift in Sources */,
 				DED073391E6C246D00092366 /* SecondViewController.swift in Sources */,
