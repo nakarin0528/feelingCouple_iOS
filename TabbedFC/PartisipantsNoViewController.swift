@@ -47,6 +47,7 @@ class PartisipantsNoViewController: BaseViewController, UIPickerViewDelegate, UI
         print(row1, row2)
         blep.malesNum = row1
         blep.femalesNum = row2
+        blep.participantsNum = row1 + row2 + 2
         
         let item1 = self.pickerView(pickerView, titleForRow: row1, forComponent: 0)
         let item2 = self.pickerView(pickerView, titleForRow: row2, forComponent: 1)
@@ -66,15 +67,4 @@ class PartisipantsNoViewController: BaseViewController, UIPickerViewDelegate, UI
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -105,18 +105,11 @@ class StartedViewController: BaseViewController, UITableViewDelegate, UITableVie
             let startAlert = SCLAlertView()
             startAlert.addButton("OK") {
                 //ここにデータ送信・画面遷移を記述してください
+                self.data.setPersonalTarget(value: [self.prof.name, self.prof.gender, String(self.selectedNum!)])
             }
             startAlert.showNotice("確認", subTitle: selectedName!+"さんに決定しますか?", closeButtonTitle: "Cancel")
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

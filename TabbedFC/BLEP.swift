@@ -27,6 +27,7 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     //参加人数
     var malesNum = 0
     var femalesNum = 0
+    var participantsNum = 0
     var personal: [String] = []
     var names: [String] = []
     var personalSelectData: [String] = []
@@ -36,6 +37,8 @@ class BLEP: NSObject, CBPeripheralManagerDelegate {
     //受け取り回数
     var count = 0
     var count2 = 0
+    //データ受信数
+    var datasNum = 0
     
     let serviceUUID = CBUUID(string: "A000")
     

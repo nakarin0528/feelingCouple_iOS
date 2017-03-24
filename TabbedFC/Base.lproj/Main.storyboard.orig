@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-=======
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gWi-Bo-DgS">
->>>>>>> UI
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -16,6 +12,9 @@
     <customFonts key="customFonts">
         <array key="AK-ANGEL.ttf">
             <string>AKANGEL</string>
+        </array>
+        <array key="Das Gitter Mac.ttf">
+            <string>Das_Gitter</string>
         </array>
     </customFonts>
     <scenes>
@@ -31,33 +30,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FeelingCouple-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXK-xf-mko">
-                                <rect key="frame" x="63" y="164" width="250" height="80"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FeelinGCouple=" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXK-xf-mko">
+                                <rect key="frame" x="62.5" y="164" width="250" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="OKr-Ks-8rO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AKANGEL" family="AK ANGEL" pointSize="40"/>
-                                <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iK-oX-coK">
-                                <rect key="frame" x="122" y="384" width="132" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Make Room"/>
+                                <rect key="frame" x="122.5" y="384" width="131" height="47"/>
+                                <fontDescription key="fontDescription" name="Das_Gitter" family="Das Gitter" pointSize="25"/>
+                                <state key="normal" title="Make Room">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="makeRoom:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ubb-cJ-YH3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xc2-JU-WtP">
-                                <rect key="frame" x="129" y="506" width="118" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Join Room"/>
+                                <rect key="frame" x="133.5" y="511" width="109" height="47"/>
+                                <fontDescription key="fontDescription" name="Das_Gitter" family="Das Gitter" pointSize="25"/>
+                                <state key="normal" title="Join Room">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="joinRoom:" destination="9pv-A4-QxB" eventType="touchUpInside" id="RhK-hK-ots"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcx-qu-0zr">
-                                <rect key="frame" x="187.5" y="109" width="0.0" height="0.0"/>
+                                <rect key="frame" x="188" y="109" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -100,8 +103,11 @@
                                 <rect key="frame" x="28" y="225" width="320" height="216"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eq3-4O-XNU">
-                                <rect key="frame" x="172" y="491" width="31" height="30"/>
-                                <state key="normal" title="決定"/>
+                                <rect key="frame" x="150" y="491" width="75" height="47"/>
+                                <fontDescription key="fontDescription" name="Das_Gitter" family="Das Gitter" pointSize="25"/>
+                                <state key="normal" title="Decide">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="HVK-eT-ucQ" kind="show" id="Uey-e5-85E"/>
                                 </connections>
@@ -158,15 +164,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmW-fL-d8v">
-                                <rect key="frame" x="165.5" y="606" width="43" height="36"/>
+<<<<<<< HEAD
+                                <rect key="frame" x="166" y="606" width="43" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Start"/>
+=======
+                                <rect key="frame" x="167.5" y="602" width="39" height="40"/>
+                                <fontDescription key="fontDescription" name="Das_Gitter" family="Das Gitter" pointSize="20"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+>>>>>>> UI
                                 <connections>
                                     <action selector="decideParticipants:" destination="HVK-eT-ucQ" eventType="touchUpInside" id="qmP-Ko-YQL"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mGR-Gb-v1q">
-                                <rect key="frame" x="46" y="161" width="283" height="420"/>
+                                <rect key="frame" x="46" y="161" width="283" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -209,15 +223,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeN-ye-eKX">
-                                <rect key="frame" x="155.5" y="606" width="64" height="36"/>
+<<<<<<< HEAD
+                                <rect key="frame" x="156" y="606" width="64" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Decide"/>
+=======
+                                <rect key="frame" x="157.5" y="602" width="60" height="40"/>
+                                <fontDescription key="fontDescription" name="Das_Gitter" family="Das Gitter" pointSize="20"/>
+                                <state key="normal" title="Decide">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+>>>>>>> UI
                                 <connections>
                                     <action selector="decideButton:" destination="WLg-zz-tXO" eventType="touchUpInside" id="L8a-p2-eKG"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZtB-Es-s0r">
-                                <rect key="frame" x="46" y="156" width="283" height="425"/>
+                                <rect key="frame" x="46" y="156" width="283" height="421"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -271,14 +293,17 @@
                                     <segment title="男性"/>
                                     <segment title="女性"/>
                                 </segments>
+                                <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="genderSelection:" destination="hQI-sA-4Jj" eventType="valueChanged" id="a4Z-GM-IMu"/>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0G-o5-7lE">
-                                <rect key="frame" x="163" y="498" width="49" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="完了"/>
+                                <rect key="frame" x="158.5" y="498" width="58" height="47"/>
+                                <fontDescription key="fontDescription" name="Das_Gitter" family="Das Gitter" pointSize="25"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="finishButton:" destination="hQI-sA-4Jj" eventType="touchDown" id="Df8-98-ZYP"/>
                                     <segue destination="rtn-CI-rXs" kind="unwind" unwindAction="unwindToTopWithSegue:" id="A7q-Ur-GgN"/>
@@ -359,7 +384,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdX-5a-1td">
-                                <rect key="frame" x="140.5" y="70" width="94.5" height="36"/>
+                                <rect key="frame" x="140" y="70" width="95" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -390,19 +415,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEv-jM-fSv">
-                                <rect key="frame" x="121.5" y="100" width="132.5" height="36"/>
+                                <rect key="frame" x="121" y="100" width="133" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EOp-fy-a7E">
-                                <rect key="frame" x="46" y="161" width="283" height="420"/>
+                                <rect key="frame" x="46" y="161" width="283" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySh-Pd-dIp">
-                                <rect key="frame" x="168" y="606" width="38" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Join"/>
+                                <rect key="frame" x="171" y="602" width="32" height="40"/>
+                                <fontDescription key="fontDescription" name="Das_Gitter" family="Das Gitter" pointSize="20"/>
+                                <state key="normal" title="Join">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="joinButton:" destination="TG5-CB-qNd" eventType="touchUpInside" id="Vvb-cR-KJw"/>
                                 </connections>
@@ -442,15 +469,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ルームマスターの合図の後に 押してください" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHl-Gm-GNm">
-                                <rect key="frame" x="43" y="307.5" width="290" height="53"/>
+                                <rect key="frame" x="43" y="307" width="290" height="53"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwL-ew-soT">
-                                <rect key="frame" x="152.5" y="551" width="71" height="36"/>
+<<<<<<< HEAD
+                                <rect key="frame" x="152" y="551" width="71" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Receive"/>
+=======
+                                <rect key="frame" x="155" y="547" width="66" height="40"/>
+                                <fontDescription key="fontDescription" name="Das_Gitter" family="Das Gitter" pointSize="20"/>
+                                <state key="normal" title="Receive">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+>>>>>>> UI
                                 <connections>
                                     <action selector="startButton:" destination="CAc-WU-cL7" eventType="touchUpInside" id="GOS-aI-iVm"/>
                                     <segue destination="JJI-je-eGy" kind="show" id="V19-Lm-MAg"/>
@@ -492,7 +527,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gys-ad-EMu">
-                                <rect key="frame" x="46" y="161" width="283" height="420"/>
+                                <rect key="frame" x="46" y="161" width="283" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="81S-rK-bQc">
@@ -507,9 +542,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFg-wC-WiD">
-                                <rect key="frame" x="155" y="606" width="64" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Decide"/>
+                                <rect key="frame" x="157" y="602" width="60" height="40"/>
+                                <fontDescription key="fontDescription" name="Das_Gitter" family="Das Gitter" pointSize="20"/>
+                                <state key="normal" title="Decide">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="decideButton:" destination="JJI-je-eGy" eventType="touchUpInside" id="byw-u6-fbA"/>
                                 </connections>
@@ -560,9 +597,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="335-QR-mo5">
-                                <rect key="frame" x="152" y="551" width="71" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Receive"/>
+                                <rect key="frame" x="154.5" y="547" width="66" height="40"/>
+                                <fontDescription key="fontDescription" name="Das_Gitter" family="Das Gitter" pointSize="20"/>
+                                <state key="normal" title="Receive">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -580,10 +619,10 @@
             </objects>
             <point key="canvasLocation" x="4172" y="359"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Base Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController storyboardIdentifier="tabbar" id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbar" id="49e-Tb-3d3" customClass="BaseTabBarController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -612,7 +651,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="VVH-TH-tOJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchHeart.png" translatesAutoresizingMaskIntoConstraints="NO" id="VVH-TH-tOJ">
                                 <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="EJS-P1-K4f"/>
@@ -640,7 +679,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="by0-qK-NeI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="Home" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g96-A8-OMZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="g96-A8-OMZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -657,9 +696,10 @@
     <resources>
         <image name="History" width="32" height="32"/>
         <image name="Home" width="32" height="32"/>
-        <image name="Launch" width="256" height="256"/>
+        <image name="LaunchHeart.png" width="512" height="512"/>
         <image name="Profile" width="32" height="32"/>
         <image name="camera.png" width="128" height="128"/>
         <image name="library.png" width="128" height="128"/>
     </resources>
+    <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
