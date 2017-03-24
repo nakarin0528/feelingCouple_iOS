@@ -21,15 +21,19 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let member = OrganizingData.sharedData.males + OrganizingData.sharedData.females
     var timer: Timer!
     var n = 0
+    var path: Int?
     var resultArray = [[String]]()
+    var lastCell: UITableViewCell?
     var data = OrganizingData.sharedData
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        resultTable.register(UITableViewCell.self, forCellReuseIdentifier: "memberCell")
         resultTable.delegate = self
         resultTable.dataSource = self
+        resultTable.allowsMultipleSelection = false
         myName.text = ""
         yourName.text = ""
         arrow1.alpha = 0
@@ -38,7 +42,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         heart2.alpha = 0
         brokenHeart.alpha = 0
         
-        //resultArray = data.matching(targetData: data.targetData)
+        resultArray = data.matching(targetData: data.targetData)
         
         // Do any additional setup after loading the view.
     }
@@ -48,29 +52,47 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
+    //Cellの総数を返す
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (member.count)
     }
     
+    //Cellに値を設定する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memberCell", for: indexPath)
+        // セルが選択された時の背景色を消す
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.textLabel?.text = member[indexPath.row]
         return cell
     }
     
+    //Cellが選択された時に呼び出される
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.showResult(indexPath:)), userInfo: nil, repeats: true)
-        timer.fire()
+        lastCell?.accessoryType = .none
+        lastCell = tableView.cellForRow(at:indexPath)
+        path = indexPath.row
+        print(path!)
+        let cell = tableView.cellForRow(at:indexPath)
+        cell?.accessoryType = .checkmark
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.showResult), userInfo: nil, repeats: true)
+    }
+    
+    // セルの選択が外れた時に呼び出される
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at:indexPath)
+        // チェックマークを外す
+        cell?.accessoryType = .none
     }
 
-    func showResult(indexPath: IndexPath){
+    func showResult(tm: Timer){
         arrow1.alpha = 0
         arrow2.alpha = 0
         arrow3.alpha = 0
         heart2.alpha = 0
         brokenHeart.alpha = 0
         if n == 0{
-            myName.text = member[indexPath.row]
+            yourName.text = ""
+            myName.text = member[path!]
             n += 1
         }else if n == 1{
             arrow1.alpha = 1
@@ -82,8 +104,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
             arrow3.alpha = 1
             n += 1
         }else{
-            yourName.text = resultArray[indexPath.row][1]
-            if resultArray[indexPath.row][2] == "マッチング成立！"{
+            yourName.text = resultArray[path!][1]
+            if resultArray[path!][2] == "マッチング成立！"{
                 heart2.alpha = 1
             }
             else{

@@ -219,7 +219,7 @@
 				TargetAttributes = {
 					DED073301E6C246D00092366 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 893D7556GH;
+						DevelopmentTeam = KE34B4UU7B;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -468,10 +468,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 893D7556GH;
+				DEVELOPMENT_TEAM = KE34B4UU7B;
 				INFOPLIST_FILE = TabbedFC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCnakari;
+				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -484,10 +484,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 893D7556GH;
+				DEVELOPMENT_TEAM = KE34B4UU7B;
 				INFOPLIST_FILE = TabbedFC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFCnakari;
+				PRODUCT_BUNDLE_IDENTIFIER = com.feelingCouplePBL.TabbedFC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
