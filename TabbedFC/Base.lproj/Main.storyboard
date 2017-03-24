@@ -610,10 +610,10 @@
             </objects>
             <point key="canvasLocation" x="5018" y="-322"/>
         </scene>
-        <!--View Controller-->
+        <!--Collect View Controller-->
         <scene sceneID="4QY-bQ-Wt3">
             <objects>
-                <viewController storyboardIdentifier="pleasewait" id="dbK-Nc-jsB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pleasewait" id="dbK-Nc-jsB" customClass="CollectViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pgO-ZF-Hnl"/>
                         <viewControllerLayoutGuide type="bottom" id="rKQ-Eg-IWQ"/>
@@ -648,7 +648,7 @@
         <!--Result View Controller-->
         <scene sceneID="BN2-K6-B5S">
             <objects>
-                <viewController id="wfs-R5-AFY" customClass="ResultViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="result" id="wfs-R5-AFY" customClass="ResultViewController" customModule="TabbedFC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="deX-Fq-HQZ"/>
                         <viewControllerLayoutGuide type="bottom" id="cZl-oO-aP6"/>

@@ -105,7 +105,7 @@ class StartedViewController: BaseViewController, UITableViewDelegate, UITableVie
             let startAlert = SCLAlertView()
             startAlert.addButton("OK") {
                 //ここにデータ送信・画面遷移を記述してください
-                self.navigationController?.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "pleasewait") as! UIViewController, animated:true)
+                self.navigationController?.pushViewController(self.storyboard!.instantiateViewController(withIdentifier: "pleasewait") as! CollectViewController, animated:true)
                 self.data.setPersonalTarget(value: [self.prof.name, self.prof.gender, String(self.selectedNum!)])
             }
             startAlert.showNotice("確認", subTitle: selectedName!+"さんに決定しますか?", closeButtonTitle: "Cancel")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07CF3CBF1E8541CF00CC742F /* CollectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF3CBE1E8541CF00CC742F /* CollectViewController.swift */; };
 		538D5BCDA5420CCCD44FA77F /* Pods_TabbedFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58A330CB047A49595BA0CE5D /* Pods_TabbedFC.framework */; };
 		DB08DD631E765437008DA4D1 /* BLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08DD621E765436008DA4D1 /* BLE.swift */; };
 		DB08DD651E765A5F008DA4D1 /* AroundSerchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08DD641E765A5F008DA4D1 /* AroundSerchViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07CF3CBE1E8541CF00CC742F /* CollectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectViewController.swift; sourceTree = "<group>"; };
 		1AF05E1D00CF446208EE6933 /* Pods-TabbedFC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabbedFC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TabbedFC/Pods-TabbedFC.debug.xcconfig"; sourceTree = "<group>"; };
 		58A330CB047A49595BA0CE5D /* Pods_TabbedFC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabbedFC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9EF16F735A4D26CF2B52B06 /* Pods-TabbedFC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabbedFC.release.xcconfig"; path = "Pods/Target Support Files/Pods-TabbedFC/Pods-TabbedFC.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				DE86A09D1E824E8600DADE33 /* StartedViewController.swift */,
 				DBE270241E810D5E00C938F6 /* SelectViewController.swift */,
 				EDAC0FFA1E84FD1400ADADDA /* ResultViewController.swift */,
+				07CF3CBE1E8541CF00CC742F /* CollectViewController.swift */,
 				EDAC0FF01E77BA8D00ADADDA /* camera.png */,
 				EDAC0FF11E77BA8D00ADADDA /* library.png */,
 				DBDC85C31E84072E0066E446 /* smallHeart.png */,
@@ -322,6 +325,7 @@
 				DED073371E6C246D00092366 /* FirstViewController.swift in Sources */,
 				DB08DD651E765A5F008DA4D1 /* AroundSerchViewController.swift in Sources */,
 				DEE86D1D1E7F66C5005985E9 /* OrganizingData.swift in Sources */,
+				07CF3CBF1E8541CF00CC742F /* CollectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
