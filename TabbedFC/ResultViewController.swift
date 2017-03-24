@@ -74,12 +74,14 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print(path!)
         let cell = tableView.cellForRow(at:indexPath)
         cell?.accessoryType = .checkmark
+        n = 0
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.showResult), userInfo: nil, repeats: true)
     }
     
     // セルの選択が外れた時に呼び出される
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at:indexPath)
+        timer.invalidate()
         // チェックマークを外す
         cell?.accessoryType = .none
     }
